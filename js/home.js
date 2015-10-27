@@ -85,8 +85,8 @@ app.controller("brandController", function($scope){
 		"src" : "img/Adidas/shoes.jpeg",
 		"shoesType" : "Running",
 		"ratings" : "154",
-		"currPrice" : "3,999",
-		"prevPrice" : "9,999",
+		"currPrice" : "3999",
+		"prevPrice" : "9999",
 		"discount" : "80%"
 	},
 	{
@@ -94,8 +94,8 @@ app.controller("brandController", function($scope){
 		"src" : "img/Adidas/shoes1.jpeg",
 		"shoesType" : "casual",
 		"ratings" : "100",
-		"currPrice" : "2,999",
-		"prevPrice" : "6,999",
+		"currPrice" : "2999",
+		"prevPrice" : "6999",
 		"discount" : "50%"
 	},
 	{
@@ -103,8 +103,8 @@ app.controller("brandController", function($scope){
 		"src" : "img/Adidas/shoes2.jpeg",
 		"shoesType" : "Running",
 		"ratings" : "244",
-		"currPrice" : "1,999",
-		"prevPrice" : "5,999",
+		"currPrice" : "1999",
+		"prevPrice" : "5999",
 		"discount" : "60%"
 	},
 	{
@@ -112,8 +112,8 @@ app.controller("brandController", function($scope){
 		"src" : "img/Adidas/shoes3.jpeg",
 		"shoesType" : "sport",
 		"ratings" : "201",
-		"currPrice" : "1,599",
-		"prevPrice" : "2,099",
+		"currPrice" : "1599",
+		"prevPrice" : "2099",
 		"discount" : "25%"
 	},
 	{
@@ -121,8 +121,8 @@ app.controller("brandController", function($scope){
 		"src" : "img/Adidas/shoes4.jpeg",
 		"shoesType" : "spring",
 		"ratings" : "350",
-		"currPrice" : "6,999",
-		"prevPrice" : "9,999",
+		"currPrice" : "6999",
+		"prevPrice" : "9999",
 		"discount" : "40%"
 	},
 	{
@@ -130,8 +130,8 @@ app.controller("brandController", function($scope){
 		"src" : "img/Adidas/shoes5.jpeg",
 		"shoesType" : "football",
 		"ratings" : "304",
-		"currPrice" : "7,999",
-		"prevPrice" : "9,999",
+		"currPrice" : "7999",
+		"prevPrice" : "9999",
 		"discount" : "30%"
 	},
 	{
@@ -139,8 +139,8 @@ app.controller("brandController", function($scope){
 		"src" : "img/Adidas/shoes6.jpeg",
 		"shoesType" : "cricket",
 		"ratings" : "54",
-		"currPrice" : "1,099",
-		"prevPrice" : "2,999",
+		"currPrice" : "1099",
+		"prevPrice" : "2999",
 		"discount" : "70%"
 	},
 	{
@@ -148,8 +148,8 @@ app.controller("brandController", function($scope){
 		"src" : "img/Adidas/shoes7.jpeg",
 		"shoesType" : "Running",
 		"ratings" : "54",
-		"currPrice" : "5,099",
-		"prevPrice" : "11,999",
+		"currPrice" : "5099",
+		"prevPrice" : "11999",
 		"discount" : "60%"
 	}
 	];
@@ -375,6 +375,7 @@ app.controller("brandController", function($scope){
 		"discount" : "60%"
 	}
 	];
+	
 	$scope.hideceta = function(){
 		angular.element(jqCatagories).removeClass("show").addClass("hide");
 		angular.element(jqDownArrow).removeClass("show").addClass("hide");
@@ -711,6 +712,38 @@ app.controller("brandController", function($scope){
 			angular.element(adidasProduct).removeClass("hide");
 			angular.element(filaProduct).removeClass("hide");
 			angular.element(lottoProduct).removeClass("hide");
+		}
+	}
+	$scope.lowPriceFilter = function(){
+		
+			
+		if($scope.lowerPrice){
+			var adivalues = $scope.adiRecords;
+			var filavalues = $scope.filaRecords;		
+			angular.forEach(adivalues, function(adivalue) {
+				var adival = adivalue.id;
+				console.log(adival);
+				if(adivalue.currPrice < 2000){					
+					console.log("a");
+					document.getElementById(adival).className = "product show";
+				}
+				else{
+					console.log("b");
+					document.getElementById(adival).className = "product hide";
+				}
+			});
+			angular.forEach(filavalues, function(filavalue) {
+				var filaval = filavalue.id;
+				console.log(filaval);
+				if(filavalue.currPrice < 2000){		
+					console.log("a");
+					document.getElementById(filaval).className = "product show";
+				}
+				else{
+					console.log("b");
+					document.getElementById(filaval).className = "product hide";
+				}
+			});
 		}
 	}
 	
