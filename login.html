@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+		<title>Login</title>
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-social.css">
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/angular.route.js"></script>
+		<script type="text/javascript" src="js/login.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/home.css" />
+	</head>
+	<body>
+	<div class="Content">
+		<div class="bg-blue">
+		 <section class="pageContent">
+			<header class="header">
+					<div class="header1">
+						<img class="logo" src="img/companyLogo.png" alt="company_logo" />
+					</div> 
+					<div class="header2">	
+						<div class="social">
+							<a class="btn-social btn-facebook fa fa-facebook">
+							
+							</a>
+							<a class="btn-social btn-vimeo fa fa-vimeo">
+							
+							</a>
+							<a class="btn-social btn-tumblr fa fa-tumblr">
+							
+							</a>
+							<a class="fa fa-twitter btn-social btn-twitter">
+							
+							</a>
+							<a class="fa fa-instagram btn-social btn-instagram">
+							
+							</a>
+						</div>								
+						<div class="nav1">								
+							<a class="nav-links active" href="javascript:void(0);">HOME</a>
+							<a class="nav-links" href="javascript:void(0);">ABOUT</a>
+							<a class="nav-links" href="javascript:void(0);">FEATURES</a>
+							<a class="nav-links" href="javascript:void(0);">PORTFOLIO</a>
+							<a class="nav-links" href="javascript:void(0);">BLOG</a>
+							<a class="nav-links" href="javascript:void(0);">CONTACTS</a>							
+						</div>	
+					</div>
+            </header>
+		</section>
+		</div>
+		<section class="pageContent olfHidden">
+		<div ng-app = "loginApp" ng-controller = "loginCrtl" class="loginSection">
+			<div class="loginHeader">Secure Login</div>
+			<div class="loginBody">
+			<div id="errorDiv" class="pb-m colorRed">{{Err}}</div>
+			<div>
+				<div class="lableTxt">User ID</div>
+				<div><input type="text" ng-model = "UserId" placeholder="UserId"/></div>
+			</div>
+			<div class="pt-m">
+				<div class="lableTxt">Password</div>
+				<div><input type="password" ng-model = "Password" placeholder="Password"/></div>
+			</div>			
+			<div>
+				<button class="loginButton" ng-click="checkUser()">Login</button>
+			</div>
+			<div class="">Forgot <a href="javascript:void(0);"> User Id</a> or <a href="javascript:void(0);">Password</a> ?</div>
+			</div>
+		</div>
+		</section>
+		<footer class="footer">
+				<div class="pageContent">
+					<div class="pt-xl">
+					<div class="socser">	
+						<input type="search" class="searchbox" placeholder="Search"/>
+						<a class="btn-social btn-facebook fa fa-facebook" data-toggle="tooltip" data-placement="top" href="#" title="FACEBOOK"></a>
+						<a class="btn-social btn-vimeo fa fa-vimeo" data-toggle="tooltip" data-placement="top" href="#" title="VIMEO" ></a>
+						<a class="btn-social btn-tumblr fa fa-tumblr" data-toggle="tooltip" title="TUMBLR" data-placement="top"></a>
+						<a class="fa fa-twitter btn-social btn-twitter" data-toggle="tooltip" title="TWITTER" data-placement="top"></a>
+						<a class="fa fa-instagram btn-social btn-instagram" data-toggle="tooltip" title="INSTAGRAM" data-placement="top"> </a>
+					</div>
+					<div class="navi">
+						<nav class="nav">
+							<a href="javascript:void(0);" class="footer-navlinks">Home</a>
+							<a href="javascript:void(0);" class="footer-navlinks">About</a>
+							<a href="javascript:void(0);" class="footer-navlinks">Features</a>
+							<a href="javascript:void(0);" class="footer-navlinks">Portfolio</a>
+							<a href="javascript:void(0);" class="footer-navlinks">BLOG</a>
+							<a href="javascript:void(0);" class="footer-navlinks">contacts</a>
+						</nav> 
+					</div>	
+					</div>
+				</div>
+			</footer> 
+	</div>
+	</body>
+</html>

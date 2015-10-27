@@ -1,0 +1,136 @@
+/*My CSS*/
+body{font-family: arial; font-size: 13px}
+.pageContent{width: 980px; margin: 0 auto}
+.leftCol{width: 200px; float: left; margin-right: 13px; margin-top: 50px; border-top: 1px solid #000; padding-top: 10px}
+.rightCol{width: 710px; float: right; margin-left: 12px; margin-top: 50px; border-top: 1px solid #000; padding-top: 10px}
+.siteNav{padding-top: 10px; color: #999; width: 100%; text-align: center}
+.catagoryTitle{font-weight: bold; font-size: 32px; width: 100%; text-align: center}
+.siteNav .active{color: #000}
+.catagory{padding: 5px 0; border-top: 1px solid #999; border-bottom: 1px solid #999; margin-top: 10px}
+.product{width: 230px; padding 5px; padding-right: 15px; float: left}
+.bg-blue{background: #009CDE}
+.header{overflow: hidden; padding: 20px 0; background: #009CDE}
+.header .header1{float:left;}
+.nav-links{color: #FFF}
+.nav-links:hover{color: #999; text-decoration: none}
+.nav-links.active{color: #F00}
+.footer-navlinks{color: #444342}
+.footer-navlinks:hover{color: #999; text-decoration: none}
+.social{text-align: right;}
+.btn-social{margin:5px;background-color:rgb(209,209,209);border-radius:100%;padding:5px;}
+.btn-facebook , .btn-tumblr{padding-left: 8px;padding-right: 8px;}
+.header .btn-social:hover{background-color:red;color:#CCC;text-decoration: none;cursor: pointer;}
+.carousel{height: 460px;background-color: #607A89}
+.pt-40{padding-top: 40px}
+.pt-xl{padding-top: 20px}
+.pb-m{padding-bottom: 10px}
+.pb-s{padding-bottom: 5px}
+.pt-m{padding-top: 10px}
+.pt-s{padding-top: 5px}
+.pl-s{padding-left: 5px}
+.pl-m{padding-left: 10px}
+.fl{float: left}
+.hide{display: none}
+.show{display: block}
+.colorRed{color: #F00}
+.txt-light{color: #999}
+.linrThrought{text-decoration: line-through}
+.bold{font-weight: bold}
+.olfHidden{overflow: hidden}
+.txt-13{font-size: 13px}
+.txt-15{font-size: 15px}
+.fWorkHeader{float: left;font-weight: bold}
+.fWorkHeaderDiv{padding-bottom: 10px; overflow: hidden}
+.leastNews{float: left;margin-right: 10px;width: 235px;}
+.leastNews h3{font-weight: bold;font-size: 14px;}
+.leastNews .date {padding: 8px 5px 5px 18px;float: left;}	
+.leastNews .circle {width: 60px;height: 60px;border-radius: 100%;text-align: center;float: left;color: #fff;background-color: #d1d1d1;margin-right: 10px;}
+.leastNews .date .day {font-size: 9px;margin-top: 8px;margin-left: -6px;}
+.leastNews .date .year {font-size: 14px; margin-left: -5px;margin-top: -13px;}
+.leastNews .red_head1 {color: red;font-size: 13px;}
+.leastNews .light-font {color: rgba(0,0,0,0.5);font-size: 12px;}
+.leastNews .light-font p { margin-top: -6px;}
+.leastNews .description {font-size: 12px; margin-top: -5px;}
+.leastNews .glyphicon-menu-right {border-radius: 100%;background-color: #000;color: #FFF;font-size: 8px;padding: 3px;margin-left: 2px;float: right;}
+.leastNews .glyphicon-menu-left {border-radius: 100%;color: #FFF;background-color: #000;padding: 3px;font-size: 8px;float: right;margin-bottom: 13px;}
+.Arrow-Icons{clear: both; margin-bottom: 0px !important; margin-top: 15px; overflow: hidden}
+.section4{text-align: center;float: left;margin-right: 10px;width:230px;}
+.section4.last{margin-right: 0px}
+.article .section4 a{color:#000;}
+.article .section4 .glyphicon{font-size:21px; background-color: #ccc; border-radius: 100%; padding: 14px}
+.article .section4 .glyphicon:hover{background-color:red;color:#FFF;cursor: pointer;}
+.article .section4 h3{font-size:14px;font-weight:bold;}
+.article .section4 p{font-size:12px;margin-bottom:40px;}
+.red_strip{background-color: RED;height: 5px;}
+.nav1{float: right;}
+.nav1 a{margin-left: 8px;margin-right: 9px;font-weight: bold;font-size: 12px;margin-top: 61px;margin-bottom: 26px;}
+.article p{text-align:center;}
+.article h4{text-align:center;}	
+.article3 .nav_btn, .article5 .nav_btn{float: right;}
+.article3 .nav_btn .glyphicon-menu-right{border-radius: 100%;background-color: #000;color: #FFF;font-size:8px;padding:3px;margin-right:15px;margin-left: -2px;}
+.article3 .nav_btn .glyphicon-menu-left{border-radius: 100%;color: #FFF;background-color: #000;padding:3px;font-size:8px;}
+.article3 .nav_btn a .glyphicon:hover{background-color:red;color:#FFF;cursor: pointer;}
+.article3 .section4{height: 220px;width: 235px;background-color:#e8e8e8;}
+/*.glyphicon-stack {position: relative;display: inline-block;width: 2em;height: 2em;line-height: 2em;vertical-align: middle;}
+.glyphicon-circle{position: relative;border-radius: 50%;width: 100%;height: auto;padding-top: 100%;background: black;}
+.glyphicon-stack-1x {line-height: inherit;}
+.glyphicon-stack-1x, .glyphicon-stack-2x {position: absolute;left: 0;width: 100%;text-align: center;}
+*/
+.article4 .section2{float: left;width: 480px;margin-right:10px;}
+.article4 a .glyphicon:hover{background-color:red;color:#FFF;cursor: pointer;}
+.article4 .section2 .light-font{color:rgba(0,0,0,0.5);}
+.article4 .section2 span{color:rgba(0,0,0,1);}
+.article4 .section2 P{font-size:12px;}	
+.article4 .section2 h3{font-weight: bold;font-size: 14px}
+.article5 {margin-top: 40px;}
+.article5 h3{font-family:arial;color: red;font-size: 13px;margin-top: 0px;margin-bottom: 5px;}	
+.article5 p{font-size: 12px;font-family: arial;}
+.article5 .nav_btn .glyphicon-menu-right{border-radius: 100%;background-color: #000;color: #FFF;font-size:8px;padding:3px;margin-right:15px;margin-left: -2px;}
+.article5 .nav_btn .glyphicon-menu-left{border-radius: 100%;color: #FFF;background-color: #000;padding:3px;font-size:8px;}
+.article5 a .glyphicon:hover{background-color:red;color:#FFF;cursor: pointer;}
+.texthover:hover{color: red;cursor: pointer;}
+.texthover1:hover{color: black;cursor: pointer;}
+.article5 .nav_btn .glyphicon-menu-right{border-radius: 100%;background-color: #000;color: #FFF;}
+.article5 .nav_btn .glyphicon-menu-left{border-radius: 100%;color: #FFF;background-color: #000;}
+.article5  .four-section{float: left; margin-right:10px; width: 235px}
+.article5 .four-section .section4{height: 230px;width: 235px;background-color: #e8e8e8;margin-bottom: 15px}
+.article5 .text{width: 235px;}
+.article5 .text .light-font{color:rgba(0,0,0,0.5);font-size: 12px;}
+.article6 .text{float:left;width: 235px;margin-right: 10px;}
+.article6 .text .list-inline{list-style-type: none;}
+.article6 .text a{float:left;}	
+.article6 .text h3{font-size:14px;color:black;font-weight:bold;}
+.article6 .boxes:hover{cursor:pointer;}
+.footer{height:115px;background-color:rgba(0,0,0,.90); width: 100%}
+.searchbox{background-color: #444342;float:right;border: medium none;padding: 5px;width:200px}
+.socser{width: 100%;text-align: right;}
+footer a{margin-left: 8px;color:#444342;font-family: arial;font-weight: bolder;font-size: 12px;margin-top: 61px;margin-bottom: 26px;}
+.footer .socser a:hover{cursor:pointer;text-decoration: none;}
+.footer .btn-social{background:none;color:#444342;}
+.footer .navi{text-align: right;width: 100%;margin-top: 10px}
+.article6 .text p{font-size:12px;}
+#dis10, #dis11{font-size:7px;}
+.article6 .text .btn-social{color: red;background-color: #FFF;font-size: 12px;}
+.article6 .text button{background-color:black;color:#FFF;height: 26px;border: none;border-radius: 5px;}
+.article6 .text button:hover{background-color:red;color:#FFF;}
+.article6 .text hr{margin:0px;}
+.article6 .text h4{margin-botton:3px;}
+.article6 .boxes{float: left;height: 44px;width: 45px;background-color: black;margin-bottom: 5px;margin-left: 5px;}
+.article6 .boxes.first{margin-left: 0px}
+hr{height:1px;background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));}
+.article6{margin-bottom:40px;overflow: hidden;}
+.article6 .text .head1{margin-botton:3px;}
+.read-more{color:red !important;cursor:pointer;}
+#dis1, #dis2, #dis3, #dis4,#dis5, #dis6, #dis7, #dis8, #dis9, #dis10 ,#dis11{display:none;}
+ textarea.form-control {height: 68px;width:168px;}
+.article6 .text input{background-color: #ccc;margin-bottom:2px;height:23px;width: 230px;} 
+.article6 .text .message input{height:100px;padding: 5px 0px 28px 10px;width: 230px;}
+.mb-0{margin-bottom: 0px}
+.txt-12{font-size: 12px !important}
+hr.blackLine{height:2px; background-color:black; margin-top: 50px; clear: both}
+/* Login CSS */
+.loginSection{width: 210px;margin: 50px 0;float: right;border-bottom: 10px solid #009CDE;}
+.loginButton{width: 60px;font-weight: bold;border: none;background: #007dc3;border-radius: 5px;padding: 5px;margin: 10px 0; color: #FFF}
+.loginHeader{color: #FFF; background: #009CDE; padding: 15px 10px;font-size: 18px}
+.loginBody{padding: 10px; border-left: 1px solid #e0d9d3; border-right: 1px solid #e0d9d3}
+.lableTxt{font-size: 13px; font-weight: bold}

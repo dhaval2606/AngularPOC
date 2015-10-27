@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+		<title>Angular App</title>
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-social.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/angular.route.js"></script>
+		<script type="text/javascript" src="js/home.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/home.css" />
+	</head>
+	<body>
+	<div class="Content">
+		<div class="bg-blue">
+		 <section class="pageContent">
+			<header class="header">
+					<div class="header1">
+						<img class="logo" src="img/companyLogo.png" alt="company_logo" />
+					</div> 
+					<div class="header2">	
+						<div class="social">
+							<a class="btn-social btn-facebook fa fa-facebook">
+							
+							</a>
+							<a class="btn-social btn-vimeo fa fa-vimeo">
+							
+							</a>
+							<a class="btn-social btn-tumblr fa fa-tumblr">
+							
+							</a>
+							<a class="fa fa-twitter btn-social btn-twitter">
+							
+							</a>
+							<a class="fa fa-instagram btn-social btn-instagram">
+							
+							</a>
+						</div>								
+						<div class="nav1">								
+							<a class="nav-links active" href="javascript:void(0);">HOME</a>
+							<a class="nav-links" href="javascript:void(0);">ABOUT</a>
+							<a class="nav-links" href="javascript:void(0);">FEATURES</a>
+							<a class="nav-links" href="javascript:void(0);">PORTFOLIO</a>
+							<a class="nav-links" href="javascript:void(0);">BLOG</a>
+							<a class="nav-links" href="javascript:void(0);">CONTACTS</a>							
+						</div>	
+					</div>
+            </header>
+		</section>
+		</div>
+		<section class="pageContent olfHidden pb-m" ng-app="homeApp" ng-controller="brandController">
+			<div class="siteNav">Home > Footwear > Men's Footwear > <span class="active">sport shoes<span></div>
+			<h1 class="catagoryTitle">Sport Shoes</h1>
+			<article class="leftCol">
+					<div class="clearfix">
+						<div class="bold txt-15 pull-left">BRAND</div>
+						<div class="pull-right" id="jqDownArrow" ng-click="hideceta()"><span class="glyphicon glyphicon-menu-down"></span></div>
+						<div class="pull-right hide" id="jqUpArrow" ng-click="showceta()"><span class="glyphicon glyphicon-menu-up"></span></div>
+					</div>
+					<div class="catagory clearfix" id="jqCatagories">
+						<div class="clearfix pb-s"><input type="checkbox" ng-click ="checkFilter()" ng-model="adidasFilter"/><span class="pl-m">Adidas</span></div>
+						<div class="clearfix pb-s"><input type="checkbox" ng-click = "filaFilter()" ng-model="filafilterModel" /><span class="pl-m">fila</span></div>
+						<div class="clearfix pb-s"><input type="checkbox" ng-click = "lottoFilter()" ng-model="lottofilterModel"/><span class="pl-m">lotto</span></div>
+						<div class="clearfix pb-s"><input type="checkbox" ng-click = "nikeFilter();" ng-model="nikefilterModel"/><span class="pl-m">nike</span></div>
+						<!--<div class="clearfix pb-s"><input type="checkbox"/><span class="pl-m">puma</span></div>
+						<div class="clearfix pb-s"><input type="checkbox"/><span class="pl-m">Reebok</span></div> -->
+					</div>
+					<div class="clearfix pt-m">
+						<div class="bold txt-15 pull-left">Price</div>
+						<div class="pull-right" id="jqDownArrowPri" ng-click="hidecetaPri()"><span class="glyphicon glyphicon-menu-down"></span></div>
+						<div class="pull-right hide" id="jqUpArrowPri" ng-click="showcetaPri()"><span class="glyphicon glyphicon-menu-up"></span></div>
+					</div>
+					<div class="catagory clearfix" id="jqCatagoriesPri">
+						<div class="clearfix pb-s"><input type="checkbox" ng-click ="lowPriceFilter()" ng-model="lowerPrice" /><span class="pl-m">Rs 1999 and below</span></div>
+						<div class="clearfix pb-s"><input type="checkbox" ng-click = "avg1Pricefilter()" ng-model="avg1Price" /><span class="pl-m">Rs 2000 - Rs 2999</span></div>
+						<div class="clearfix pb-s"><input type="checkbox" ng-click = "avg2Pricefilter()" ng-model="avg2Price"/><span class="pl-m">Rs 3000 - Rs 4999</span></div>
+						<div class="clearfix pb-s"><input type="checkbox" ng-click = "highPricefilter()" ng-model="highPrice"/><span class="pl-m">Rs 5000 - Rs 6999</span></div>
+						
+					</div>
+			</article>
+			<article class="rightCol">
+					<div class="pt-m">
+					<div id="adidasProduct">
+					<adidas-Shoes></adidas-Shoes>
+					<!--
+						<div class="product ">
+							<div><img src= "img/Adidas/shoes.jpeg" width="210" height = "150" /></div>
+							<div class="pt-m">Adidas Running Shoes</div>
+							<div class="clearfix pt-s">
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="pl-s">(154 ratings)</span>
+							</div>
+							<div class="clearfix pt-s"><span>Rs 3,999</span> <span class="pl-s linrThrought txt-light">Rs 9,999</span><span class="text-success pl-s">80%</span> </div>
+						</div>
+						<div class="product ">
+							<div><img src= "img/Adidas/shoes1.jpeg" width="210" height = "150" /></div>
+							<div class="pt-m">Adidas casual Shoes</div>
+							<div class="clearfix pt-s">
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="pl-s">(89 ratings)</span>
+							</div>
+							<div class="clearfix pt-s"><span>Rs 1,999</span> <span class="pl-s linrThrought txt-light">Rs 3,999</span><span class="text-success pl-s">50%</span> </div>
+						</div>
+						<div class="product ">
+							<div><img src= "img/Adidas/shoes2.jpeg" width="210" height = "150" /></div>
+							<div class="pt-m">Adidas Running Shoes</div>
+							<div class="clearfix pt-s">
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="pl-s">(104 ratings)</span>
+							</div>
+							<div class="clearfix pt-s"><span>Rs 2,999</span> <span class="pl-s linrThrought txt-light">Rs 4,999</span><span class="text-success pl-s">40%</span> </div>
+						</div>
+						<div class="product ">
+							<div><img src= "img/Adidas/shoes3.jpeg" width="210" height = "150" /></div>
+							<div class="pt-m">Adidas sport Shoes</div>
+							<div class="clearfix pt-s">
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="pl-s">(25 ratings)</span>
+							</div>
+							<div class="clearfix pt-s"><span>Rs 4,999</span> <span class="pl-s linrThrought txt-light">Rs 7,999</span><span class="text-success pl-s">30%</span> </div>
+						</div>
+						<div class="product ">
+							<div><img src= "img/Adidas/shoes4.jpeg" width="210" height = "150" /></div>
+							<div class="pt-m">Adidas spring Shoes</div>
+							<div class="clearfix pt-s">
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="pl-s">(209 ratings)</span>
+							</div>
+							<div class="clearfix pt-s"><span>Rs 9,999</span> <span class="pl-s linrThrought txt-light">Rs 19,999</span><span class="text-success pl-s">50%</span> </div>
+						</div>
+						<div class="product ">
+							<div><img src= "img/Adidas/shoes5.jpeg" width="210" height = "150" /></div>
+							<div class="pt-m">Adidas football Shoes</div>
+							<div class="clearfix pt-s">
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="pl-s">(300 ratings)</span>
+							</div>
+							<div class="clearfix pt-s"><span>Rs 6,999</span> <span class="pl-s linrThrought txt-light">Rs 9,999</span><span class="text-success pl-s">30%</span> </div>
+						</div>
+						<div class="product ">
+							<div><img src= "img/Adidas/shoes6.jpeg" width="210" height = "150" /></div>
+							<div class="pt-m">Adidas cricket Shoes</div>
+							<div class="clearfix pt-s">
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="pl-s">(99 ratings)</span>
+							</div>
+							<div class="clearfix pt-s"><span>Rs 3,599</span> <span class="pl-s linrThrought txt-light">Rs 5,999</span><span class="text-success pl-s">45%</span> </div>
+						</div>
+						<div class="product ">
+							<div><img src= "img/Adidas/shoes7.jpeg" width="210" height = "150" /></div>
+							<div class="pt-m">Adidas Running Shoes</div>
+							<div class="clearfix pt-s">
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="pl-s">(112 ratings)</span>
+							</div>
+							<div class="clearfix pt-s"><span>Rs 1,599</span> <span class="pl-s linrThrought txt-light">Rs 2,599</span><span class="text-success pl-s">25%</span> </div>
+						</div>
+					-->
+					
+					</div>
+					<div id="filaProduct">
+					<fila-Shoes></fila-Shoes>
+						<!-- Fila 
+						<div class="product ">
+							<div><img src= "img/fila/shoes.jpeg" width="210" height = "150" /></div>
+							<div class="pt-m">fila Running Shoes</div>
+							<div class="clearfix pt-s">
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="pl-s">(154 ratings)</span>
+							</div>
+							<div class="clearfix pt-s"><span>Rs 3,999</span> <span class="pl-s linrThrought txt-light">Rs 9,999</span><span class="text-success pl-s">80%</span> </div>
+						</div>
+						<div class="product ">
+							<div><img src= "img/fila/shoes1.jpeg" width="210" height = "150" /></div>
+							<div class="pt-m">fila casual Shoes</div>
+							<div class="clearfix pt-s">
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="pl-s">(89 ratings)</span>
+							</div>
+							<div class="clearfix pt-s"><span>Rs 1,999</span> <span class="pl-s linrThrought txt-light">Rs 3,999</span><span class="text-success pl-s">50%</span> </div>
+						</div>
+						<div class="product ">
+							<div><img src= "img/fila/shoes2.jpeg" width="210" height = "150" /></div>
+							<div class="pt-m">fila Running Shoes</div>
+							<div class="clearfix pt-s">
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="pl-s">(104 ratings)</span>
+							</div>
+							<div class="clearfix pt-s"><span>Rs 2,999</span> <span class="pl-s linrThrought txt-light">Rs 4,999</span><span class="text-success pl-s">40%</span> </div>
+						</div>
+						<div class="product ">
+							<div><img src= "img/fila/shoes3.jpeg" width="210" height = "150" /></div>
+							<div class="pt-m">fila sport Shoes</div>
+							<div class="clearfix pt-s">
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="pl-s">(25 ratings)</span>
+							</div>
+							<div class="clearfix pt-s"><span>Rs 4,999</span> <span class="pl-s linrThrought txt-light">Rs 7,999</span><span class="text-success pl-s">30%</span> </div>
+						</div>
+						<div class="product ">
+							<div><img src= "img/fila/shoes4.jpeg" width="210" height = "150" /></div>
+							<div class="pt-m">fila spring Shoes</div>
+							<div class="clearfix pt-s">
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="pl-s">(209 ratings)</span>
+							</div>
+							<div class="clearfix pt-s"><span>Rs 9,999</span> <span class="pl-s linrThrought txt-light">Rs 19,999</span><span class="text-success pl-s">50%</span> </div>
+						</div>
+						<div class="product ">
+							<div><img src= "img/fila/shoes5.jpeg" width="210" height = "150" /></div>
+							<div class="pt-m">fila football Shoes</div>
+							<div class="clearfix pt-s">
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="pl-s">(300 ratings)</span>
+							</div>
+							<div class="clearfix pt-s"><span>Rs 6,999</span> <span class="pl-s linrThrought txt-light">Rs 9,999</span><span class="text-success pl-s">30%</span> </div>
+						</div>
+						<div class="product ">
+							<div><img src= "img/fila/shoes6.jpeg" width="210" height = "150" /></div>
+							<div class="pt-m">fila cricket Shoes</div>
+							<div class="clearfix pt-s">
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="pl-s">(99 ratings)</span>
+							</div>
+							<div class="clearfix pt-s"><span>Rs 3,599</span> <span class="pl-s linrThrought txt-light">Rs 5,999</span><span class="text-success pl-s">45%</span> </div>
+						</div>
+						<div class="product ">
+							<div><img src= "img/fila/shoes7.jpeg" width="210" height = "150" /></div>
+							<div class="pt-m">fila Running Shoes</div>
+							<div class="clearfix pt-s">
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="pl-s">(112 ratings)</span>
+							</div>
+							<div class="clearfix pt-s"><span>Rs 1,599</span> <span class="pl-s linrThrought txt-light">Rs 2,599</span><span class="text-success pl-s">25%</span> </div>
+						</div>
+					-->
+					</div>
+					<div id="lottoProduct">
+					<lotto-Shoes></lotto-Shoes>
+						<!-- Lotto 
+						<div class="product ">
+							<div><img src= "img/lotto/shoes.jpeg" width="210" height = "150" /></div>
+							<div class="pt-m">lotto Running Shoes</div>
+							<div class="clearfix pt-s">
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="pl-s">(154 ratings)</span>
+							</div>
+							<div class="clearfix pt-s"><span>Rs 3,999</span> <span class="pl-s linrThrought txt-light">Rs 9,999</span><span class="text-success pl-s">80%</span> </div>
+						</div>
+						<div class="product ">
+							<div><img src= "img/lotto/shoes1.jpeg" width="210" height = "150" /></div>
+							<div class="pt-m">lotto casual Shoes</div>
+							<div class="clearfix pt-s">
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="pl-s">(89 ratings)</span>
+							</div>
+							<div class="clearfix pt-s"><span>Rs 1,999</span> <span class="pl-s linrThrought txt-light">Rs 3,999</span><span class="text-success pl-s">50%</span> </div>
+						</div>
+						<div class="product ">
+							<div><img src= "img/lotto/shoes2.jpeg" width="210" height = "150" /></div>
+							<div class="pt-m">lotto Running Shoes</div>
+							<div class="clearfix pt-s">
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="pl-s">(104 ratings)</span>
+							</div>
+							<div class="clearfix pt-s"><span>Rs 2,999</span> <span class="pl-s linrThrought txt-light">Rs 4,999</span><span class="text-success pl-s">40%</span> </div>
+						</div>
+						<div class="product ">
+							<div><img src= "img/lotto/shoes3.jpeg" width="210" height = "150" /></div>
+							<div class="pt-m">lotto sport Shoes</div>
+							<div class="clearfix pt-s">
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="pl-s">(25 ratings)</span>
+							</div>
+							<div class="clearfix pt-s"><span>Rs 4,999</span> <span class="pl-s linrThrought txt-light">Rs 7,999</span><span class="text-success pl-s">30%</span> </div>
+						</div>
+						<div class="product ">
+							<div><img src= "img/lotto/shoes4.jpeg" width="210" height = "150" /></div>
+							<div class="pt-m">lotto spring Shoes</div>
+							<div class="clearfix pt-s">
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="pl-s">(209 ratings)</span>
+							</div>
+							<div class="clearfix pt-s"><span>Rs 9,999</span> <span class="pl-s linrThrought txt-light">Rs 19,999</span><span class="text-success pl-s">50%</span> </div>
+						</div>
+						<div class="product ">
+							<div><img src= "img/lotto/shoes5.jpeg" width="210" height = "150" /></div>
+							<div class="pt-m">lotto football Shoes</div>
+							<div class="clearfix pt-s">
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="pl-s">(300 ratings)</span>
+							</div>
+							<div class="clearfix pt-s"><span>Rs 6,999</span> <span class="pl-s linrThrought txt-light">Rs 9,999</span><span class="text-success pl-s">30%</span> </div>
+						</div>
+						<div class="product ">
+							<div><img src= "img/lotto/shoes6.jpeg" width="210" height = "150" /></div>
+							<div class="pt-m">lotto cricket Shoes</div>
+							<div class="clearfix pt-s">
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="pl-s">(99 ratings)</span>
+							</div>
+							<div class="clearfix pt-s"><span>Rs 3,599</span> <span class="pl-s linrThrought txt-light">Rs 5,999</span><span class="text-success pl-s">45%</span> </div>
+						</div>
+						<div class="product ">
+							<div><img src= "img/lotto/shoes7.jpeg" width="210" height = "150" /></div>
+							<div class="pt-m">lotto Running Shoes</div>
+							<div class="clearfix pt-s">
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="pl-s">(112 ratings)</span>
+							</div>
+							<div class="clearfix pt-s"><span>Rs 1,599</span> <span class="pl-s linrThrought txt-light">Rs 2,599</span><span class="text-success pl-s">25%</span> </div>
+						</div>
+						-->
+					</div>
+					<div id="nikeProduct">
+					<nike-Shoes></nike-Shoes>
+						<!-- Nike 
+						<div class="product ">
+							<div><img src= "img/nike/shoes.jpeg" width="210" height = "150" /></div>
+							<div class="pt-m">nike Running Shoes</div>
+							<div class="clearfix pt-s">
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="pl-s">(154 ratings)</span>
+							</div>
+							<div class="clearfix pt-s"><span>Rs 3,999</span> <span class="pl-s linrThrought txt-light">Rs 9,999</span><span class="text-success pl-s">80%</span> </div>
+						</div>
+						<div class="product ">
+							<div><img src= "img/nike/shoes1.jpeg" width="210" height = "150" /></div>
+							<div class="pt-m">nike casual Shoes</div>
+							<div class="clearfix pt-s">
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="pl-s">(89 ratings)</span>
+							</div>
+							<div class="clearfix pt-s"><span>Rs 1,999</span> <span class="pl-s linrThrought txt-light">Rs 3,999</span><span class="text-success pl-s">50%</span> </div>
+						</div>
+						<div class="product ">
+							<div><img src= "img/nike/shoes2.jpeg" width="210" height = "150" /></div>
+							<div class="pt-m">nike Running Shoes</div>
+							<div class="clearfix pt-s">
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="pl-s">(104 ratings)</span>
+							</div>
+							<div class="clearfix pt-s"><span>Rs 2,999</span> <span class="pl-s linrThrought txt-light">Rs 4,999</span><span class="text-success pl-s">40%</span> </div>
+						</div>
+						<div class="product ">
+							<div><img src= "img/nike/shoes3.jpeg" width="210" height = "150" /></div>
+							<div class="pt-m">nike sport Shoes</div>
+							<div class="clearfix pt-s">
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="pl-s">(25 ratings)</span>
+							</div>
+							<div class="clearfix pt-s"><span>Rs 4,999</span> <span class="pl-s linrThrought txt-light">Rs 7,999</span><span class="text-success pl-s">30%</span> </div>
+						</div>
+						<div class="product ">
+							<div><img src= "img/nike/shoes4.jpeg" width="210" height = "150" /></div>
+							<div class="pt-m">nike spring Shoes</div>
+							<div class="clearfix pt-s">
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="pl-s">(209 ratings)</span>
+							</div>
+							<div class="clearfix pt-s"><span>Rs 9,999</span> <span class="pl-s linrThrought txt-light">Rs 19,999</span><span class="text-success pl-s">50%</span> </div>
+						</div>
+						<div class="product ">
+							<div><img src= "img/nike/shoes5.jpeg" width="210" height = "150" /></div>
+							<div class="pt-m">nike football Shoes</div>
+							<div class="clearfix pt-s">
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="pl-s">(300 ratings)</span>
+							</div>
+							<div class="clearfix pt-s"><span>Rs 6,999</span> <span class="pl-s linrThrought txt-light">Rs 9,999</span><span class="text-success pl-s">30%</span> </div>
+						</div>
+						<div class="product ">
+							<div><img src= "img/nike/shoes6.jpeg" width="210" height = "150" /></div>
+							<div class="pt-m">nike cricket Shoes</div>
+							<div class="clearfix pt-s">
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="pl-s">(99 ratings)</span>
+							</div>
+							<div class="clearfix pt-s"><span>Rs 3,599</span> <span class="pl-s linrThrought txt-light">Rs 5,999</span><span class="text-success pl-s">45%</span> </div>
+						</div>
+						<div class="product ">
+							<div><img src= "img/nike/shoes7.jpeg" width="210" height = "150" /></div>
+							<div class="pt-m">nike Running Shoes</div>
+							<div class="clearfix pt-s">
+								<span class="glyphicon glyphicon-star"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="glyphicon glyphicon-star-empty"></span>
+								<span class="pl-s">(112 ratings)</span>
+							</div>
+							<div class="clearfix pt-s"><span>Rs 1,599</span> <span class="pl-s linrThrought txt-light">Rs 2,599</span><span class="text-success pl-s">25%</span> </div>
+						</div>
+						-->
+					</div>
+					</div>
+			</article>
+		</section>
+		<footer class="footer">
+				<div class="pageContent">
+					<div class="pt-xl">
+					<div class="socser">	
+						<input type="search" class="searchbox" placeholder="Search"/>
+						<a class="btn-social btn-facebook fa fa-facebook" data-toggle="tooltip" data-placement="top" href="#" title="FACEBOOK"></a>
+						<a class="btn-social btn-vimeo fa fa-vimeo" data-toggle="tooltip" data-placement="top" href="#" title="VIMEO" ></a>
+						<a class="btn-social btn-tumblr fa fa-tumblr" data-toggle="tooltip" title="TUMBLR" data-placement="top"></a>
+						<a class="fa fa-twitter btn-social btn-twitter" data-toggle="tooltip" title="TWITTER" data-placement="top"></a>
+						<a class="fa fa-instagram btn-social btn-instagram" data-toggle="tooltip" title="INSTAGRAM" data-placement="top"> </a>
+					</div>
+					<div class="navi">
+						<nav class="nav">
+							<a href="javascript:void(0);" class="footer-navlinks">Home</a>
+							<a href="javascript:void(0);" class="footer-navlinks">About</a>
+							<a href="javascript:void(0);" class="footer-navlinks">Features</a>
+							<a href="javascript:void(0);" class="footer-navlinks">Portfolio</a>
+							<a href="javascript:void(0);" class="footer-navlinks">BLOG</a>
+							<a href="javascript:void(0);" class="footer-navlinks">contacts</a>
+						</nav> 
+					</div>	
+					</div>
+				</div>
+			</footer> 
+	</div>
+	</body>
+</html>
