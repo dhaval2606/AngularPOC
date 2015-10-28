@@ -2,14 +2,18 @@
 <html lang="en">
     <head>
 		<title>Angular App</title>
-		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-		<link rel="stylesheet" type="text/css" href="css/bootstrap-social.css">
+		
+		
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/angular.min.js"></script>
 		<script type="text/javascript" src="js/angular.route.js"></script>
 		<script type="text/javascript" src="js/home.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-social.css">
 		<link rel="stylesheet" type="text/css" href="css/home.css" />
+		
 	</head>
 	<body>
 	<div class="Content">
@@ -50,6 +54,7 @@
 		</section>
 		</div>
 		<section class="pageContent olfHidden pb-m" ng-app="homeApp" ng-controller="brandController">
+		<div id="jqProducts">	
 			<div class="siteNav">Home > Footwear > Men's Footwear > <span class="active">sport shoes<span></div>
 			<h1 class="catagoryTitle">Sport Shoes</h1>
 			<article class="leftCol">
@@ -75,7 +80,7 @@
 						<div class="clearfix pb-s"><input type="checkbox" ng-click ="lowPriceFilter()" ng-model="lowerPrice" /><span class="pl-m">Rs 1999 and below</span></div>
 						<div class="clearfix pb-s"><input type="checkbox" ng-click = "avg1Pricefilter()" ng-model="avg1Price" /><span class="pl-m">Rs 2000 - Rs 2999</span></div>
 						<div class="clearfix pb-s"><input type="checkbox" ng-click = "avg2Pricefilter()" ng-model="avg2Price"/><span class="pl-m">Rs 3000 - Rs 4999</span></div>
-						<div class="clearfix pb-s"><input type="checkbox" ng-click = "highPricefilter()" ng-model="highPrice"/><span class="pl-m">Rs 5000 - Rs 6999</span></div>
+						<div class="clearfix pb-s"><input type="checkbox" ng-click = "highPricefilter()" ng-model="highPrice"/><span class="pl-m">Rs 5000 and above</span></div>
 						
 					</div>
 			</article>
@@ -520,6 +525,49 @@
 					</div>
 					</div>
 			</article>
+		</div>
+		<div class="productDetails">
+			<div id="adi" class="hide">
+				<div class="siteNav">Home > Footwear > Men's Footwear > sport shoes > Adidas > <span class="active">Adidas Running shoes <span></div>
+					<article class="leftColPro">
+						<div><img src='img/Adidas/shoes.jpeg' width='300' height = '450' /></div>
+					</article>
+					<article class="rightColPro">
+						<h1 class="catagoryTitlePro bb-s pb-m">Adidas Running shoes</h1>
+						<div class='clearfix pt-s pb-s bb-s'> 
+								<span class='glyphicon glyphicon-star'></span>
+								<span class='glyphicon glyphicon-star'></span>
+								<span class='glyphicon glyphicon-star'></span>
+								<span class='glyphicon glyphicon-star-empty'></span>
+								<span class='glyphicon glyphicon-star-empty'></span>
+								<span class='pl-s'>154 Reviews</span>
+						</div>
+						<div class="clearfix pt-s pb-m bb-s">
+							<div class="pull-left">
+								<div class="txt-light txt-15">Select Color</div>
+								<div><input type="radio" name="adi1" checked/><span class="pl-s pr-s">White</span><input type="radio" name="adi1" /><span class="pl-s pr-s">Black</span></div>
+							</div>
+							<div class="pull-right">
+								<div class="txt-light txt-15">Select Size</div>
+								<div><input type="radio" name="adi4" checked/><span class="pl-s pr-s">6</span><input type="radio" name="adi4" /><span class="pl-s pr-s">7</span> <input type="radio" name="adi4" /><span class="pl-s pr-s">8</span><input type="radio" name="adi4" /><span class="pl-s pr-s">9</span></div>
+							</div>
+						</div>
+						<div class='pt-s txt-15 txt-light'>
+							last Price: <span class="linrThrought">Rs 12123</span>
+						</div>
+						<div class="pt-s">
+							<span class="txt-22">Rs 1111</span> <span class="pl-s success">20% Off</span>
+						</div>
+						<div class="txt-12">Selling Price</div>
+						<div class="pt-m txt-13">(Free delivery)</div>
+						<div class="pt-m w-300px">
+							<button type="button" class="btn btn-warning btn-block btn-lg">ADD TO CART</button>
+							<button type="button" class="btn btn-success btn-block btn-lg">BUY NOW</button>
+							<a type="button" class="btn btn-primary btn-sm mt-m" href="home.html">BACK TO PRODUCTS</a>
+						</div>
+					</article>
+			</div>
+		</div>
 		</section>
 		<footer class="footer">
 				<div class="pageContent">
@@ -546,5 +594,7 @@
 				</div>
 			</footer> 
 	</div>
+		
+	
 	</body>
 </html>

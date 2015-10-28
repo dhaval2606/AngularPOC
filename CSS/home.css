@@ -29,6 +29,8 @@ body{font-family: arial; font-size: 13px}
 .pt-s{padding-top: 5px}
 .pl-s{padding-left: 5px}
 .pl-m{padding-left: 10px}
+.pr-s{padding-right: 5px}
+.mt-m{margin-top: 10px}
 .fl{float: left}
 .hide{display: none}
 .show{display: block}
@@ -39,6 +41,8 @@ body{font-family: arial; font-size: 13px}
 .olfHidden{overflow: hidden}
 .txt-13{font-size: 13px}
 .txt-15{font-size: 15px}
+.txt-22{font-size: 22px}
+.w-300px{width: 300px}
 .fWorkHeader{float: left;font-weight: bold}
 .fWorkHeaderDiv{padding-bottom: 10px; overflow: hidden}
 .leastNews{float: left;margin-right: 10px;width: 235px;}
@@ -134,3 +138,7 @@ hr.blackLine{height:2px; background-color:black; margin-top: 50px; clear: both}
 .loginHeader{color: #FFF; background: #009CDE; padding: 15px 10px;font-size: 18px}
 .loginBody{padding: 10px; border-left: 1px solid #e0d9d3; border-right: 1px solid #e0d9d3}
 .lableTxt{font-size: 13px; font-weight: bold}
+.bb-s{border-bottom: 1px solid #999}
+.leftColPro{width: 320px; float: left; margin-right: 13px; margin-top: 10px}
+.rightColPro{width: 590px; float: right; margin-left: 12px; margin-top: 10px}
+.catagoryTitlePro{font-size: 22px;}
