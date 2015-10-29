@@ -43,6 +43,7 @@ body{font-family: arial; font-size: 13px}
 .txt-15{font-size: 15px}
 .txt-22{font-size: 22px}
 .w-300px{width: 300px}
+.align-c{align: center}
 .fWorkHeader{float: left;font-weight: bold}
 .fWorkHeaderDiv{padding-bottom: 10px; overflow: hidden}
 .leastNews{float: left;margin-right: 10px;width: 235px;}
