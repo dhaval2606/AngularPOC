@@ -6,7 +6,7 @@ app.directive("adidasShoes", function(){
 	return{
 		restrict : "E",
 		template : "<div class='product' id='{{adiRecord.id}}' ng-repeat ='adiRecord in adiRecords | filter : searchBox' ng-click='adiDetails(adiRecord.id)'>" +
-							"<div><img src='{{adiRecord.src}}' width='210' height = '150' /></div>" +
+							"<div class='imgDiv'><img src='{{adiRecord.src}}' width='210' height = '150' /></div>" +
 							"<div class='pt-m'>Adidas {{adiRecord.shoesType}} Shoes</div>" + 
 							"<div class='clearfix pt-s'>" +
 								"<span class='glyphicon glyphicon-star'></span>" +
@@ -68,7 +68,7 @@ app.directive("filaShoes", function(){
 	return{
 		restrict : "E",
 		template : "<div class='product' id='{{adiRecord.id}}' ng-repeat ='adiRecord in filaRecords' ng-click='filaDetails(adiRecord.id)'>" +
-							"<div><img src='{{adiRecord.src}}' width='210' height = '150' /></div>" +
+							"<div class='imgDiv'><img src='{{adiRecord.src}}' width='210' height = '150' /></div>" +
 							"<div class='pt-m'>Fila {{adiRecord.shoesType}} Shoes</div>" + 
 							"<div class='clearfix pt-s'>" +
 								"<span class='glyphicon glyphicon-star'></span>" +
@@ -130,7 +130,7 @@ app.directive("lottoShoes", function(){
 	return{
 		restrict : "E",
 		template : "<div class='product' id='{{adiRecord.id}}' ng-repeat ='adiRecord in lottoRecords' ng-click='lottoDetails(adiRecord.id)'>" +
-							"<div><img src='{{adiRecord.src}}' width='210' height = '150' /></div>" +
+							"<div class='imgDiv'><img src='{{adiRecord.src}}' width='210' height = '150' /></div>" +
 							"<div class='pt-m'>Lotto {{adiRecord.shoesType}} Shoes</div>" + 
 							"<div class='clearfix pt-s'>" +
 								"<span class='glyphicon glyphicon-star'></span>" +
@@ -192,7 +192,7 @@ app.directive("nikeShoes", function(){
 	return{
 		restrict : "E",
 		template : "<div class='product' id='{{adiRecord.id}}' ng-repeat ='adiRecord in nikeRecords' ng-click='nikeDetails(adiRecord.id)'>" +
-							"<div><img src='{{adiRecord.src}}' width='210' height = '150' /></div>" +
+							"<div class='imgDiv'><img src='{{adiRecord.src}}' width='210' height = '150' /></div>" +
 							"<div class='pt-m'>Nike {{adiRecord.shoesType}} Shoes</div>" + 
 							"<div class='clearfix pt-s'>" +
 								"<span class='glyphicon glyphicon-star'></span>" +
@@ -251,7 +251,7 @@ app.directive("nikeDetails", function(){
 	}
 });
 app.controller("brandController", function($scope){
-
+	$scope.searchBox = "";
 	$scope.adiRecords = [
 	{
 		"id" : "Adi1",
@@ -1949,6 +1949,15 @@ app.controller("brandController", function($scope){
 			angular.element(adidasProduct).removeClass("show").addClass("hide");
 			angular.element(filaProduct).removeClass("show").addClass("hide");
 			angular.element(lottoProduct).removeClass("show").addClass("hide");
+			angular.element(nikeProduct).removeClass("hide").addClass("show");
+		}
+		else if($scope.searchBox == ""){
+			$scope.adidasFilter = false; $scope.filafilterModel = false; $scope.lottofilterModel = false; $scope.nikefilterModel = false;
+			angular.element(jqNoMatch).removeClass("show").addClass("hide");
+			angular.element(jqProductes).removeClass("hide").addClass("show");
+			angular.element(adidasProduct).removeClass("hide").addClass("show");
+			angular.element(filaProduct).removeClass("hide").addClass("show");
+			angular.element(lottoProduct).removeClass("hide").addClass("show");
 			angular.element(nikeProduct).removeClass("hide").addClass("show");
 		}
 		else{
