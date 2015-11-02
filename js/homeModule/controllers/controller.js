@@ -1,265 +1,20 @@
-/* Home JS*/
+/* Home Controller */ 
 
-var app = angular.module("homeApp",[]);
-
-app.directive("adidasShoes", function(){
-	return{
-		restrict : "E",
-		template : "<div class='product' id='{{adiRecord.id}}' ng-repeat ='adiRecord in adiRecords | filter : searchBox' ng-click='adiDetails(adiRecord.id)'>" +
-							"<div class='imgDiv'><img src='{{adiRecord.src}}' width='210' height = '150' /></div>" +
-							"<div class='pt-m'>Adidas {{adiRecord.shoesType}} Shoes</div>" + 
-							"<div class='clearfix pt-s'>" +
-								"<span class='glyphicon glyphicon-star'></span>" +
-								"<span class='glyphicon glyphicon-star'></span>" +
-								"<span class='glyphicon glyphicon-star'></span>" +
-								"<span class='glyphicon glyphicon-star-empty'></span>" +
-								"<span class='glyphicon glyphicon-star-empty'></span>" +
-								"<span class='pl-s'>({{adiRecord.ratings}} ratings)</span>" +
-							"</div>" +
-							"<div class='clearfix pt-s'><span>Rs {{adiRecord.currPrice}}</span> <span class='pl-s linrThrought txt-light'>Rs {{adiRecord.prevPrice}}</span><span class='text-success pl-s'>{{adiRecord.discount}}</span> </div>" +
-						"</div>" 
-		
-	}
-});
-app.directive("adidasDetails", function(){
-	return{
-		restrict : "E",
-		template : "<div id='{{adiProRecord.productId}}' class='hide' ng-repeat ='adiProRecord in adiRecords'>" +
-				"<div class='siteNav'>Home > Footwear > Men's Footwear > sport shoes > Adidas > <span class='active'>Adidas {{adiProRecord.shoesType}} shoes <span></div>" +
-					"<article class='leftColPro'>" +
-						"<div><img src='{{adiProRecord.src}}' width='300' height = '450' /></div>" +
-					"</article>" +
-					"<article class='rightColPro'>" +
-						"<h1 class='catagoryTitlePro bb-s pb-m'>Adidas {{adiProRecord.shoesType}} shoes</h1>" +
-						"<div class='clearfix pt-s pb-s bb-s'>" +
-								"<span class='glyphicon glyphicon-star'></span>" +
-								"<span class='glyphicon glyphicon-star'></span>" +
-								"<span class='glyphicon glyphicon-star'></span>" +
-								"<span class='glyphicon glyphicon-star-empty'></span>" +
-								"<span class='glyphicon glyphicon-star-empty'></span>" +
-								"<span class='pl-s'>{{adiProRecord.ratings}} Reviews</span>" +
-						"</div>" +
-						"<div class='clearfix pt-s pb-m bb-s'>" +
-							"<div class='pull-left'>" +
-								"<div class='txt-light txt-15'>Select Color</div>" +
-								"<div><input type='radio' name='{{adiProRecord.colorName}}' checked/><span class='pl-s pr-s'>White</span><input type='radio' name='{{adiProRecord.colorName}}' /><span class='pl-s pr-s'>Black</span></div>" +
-							"</div>" +
-							"<div class='pull-right'>" +
-								"<div class='txt-light txt-15'>Select Size</div>" +
-								"<div><input type='radio' name='{{adiProRecord.SizeName}}' checked/><span class='pl-s pr-s'>6</span><input type='radio' name='{{adiProRecord.SizeName}}' /><span class='pl-s pr-s'>7</span> <input type='radio' name='{{adiProRecord.SizeName}}' /><span class='pl-s pr-s'>8</span><input type='radio' name='{{adiProRecord.SizeName}}' /><span class='pl-s pr-s'>9</span></div>" +
-							"</div>" +
-						"</div>" +
-						"<div class='pt-s txt-15 txt-light'>last Price: <span class='linrThrought'>Rs {{adiProRecord.prevPrice}}</span></div>" +
-						"<div class='pt-s'>" +
-							"<span class='txt-22'>Rs {{adiProRecord.currPrice}}</span> <span class='pl-s success'>20% Off</span>" +
-						"</div>" +
-						"<div class='txt-12'>Selling Price</div>" +
-						"<div class='pt-m txt-13'>(Free delivery)</div>" +
-						"<div class='pt-m w-300px'>" +
-							"<button type='button' class='btn btn-warning btn-block btn-lg'>ADD TO CART</button>" +
-							"<button type='button' class='btn btn-success btn-block btn-lg'>BUY NOW</button>" +
-							"<a type='button' class='btn btn-primary btn-sm mt-m' href='home.html'>BACK TO PRODUCTS</a>" +
-						"</div>" +
-					"</article>" +
-			"</div>"		
-	}
-});
-app.directive("filaShoes", function(){
-	return{
-		restrict : "E",
-		template : "<div class='product' id='{{adiRecord.id}}' ng-repeat ='adiRecord in filaRecords' ng-click='filaDetails(adiRecord.id)'>" +
-							"<div class='imgDiv'><img src='{{adiRecord.src}}' width='210' height = '150' /></div>" +
-							"<div class='pt-m'>Fila {{adiRecord.shoesType}} Shoes</div>" + 
-							"<div class='clearfix pt-s'>" +
-								"<span class='glyphicon glyphicon-star'></span>" +
-								"<span class='glyphicon glyphicon-star'></span>" +
-								"<span class='glyphicon glyphicon-star'></span>" +
-								"<span class='glyphicon glyphicon-star-empty'></span>" +
-								"<span class='glyphicon glyphicon-star-empty'></span>" +
-								"<span class='pl-s'>({{adiRecord.ratings}} ratings)</span>" +
-							"</div>" +
-							"<div class='clearfix pt-s'><span>Rs {{adiRecord.currPrice}}</span> <span class='pl-s linrThrought txt-light'>Rs {{adiRecord.prevPrice}}</span><span class='text-success pl-s'>{{adiRecord.discount}}</span> </div>" +
-						"</div>" 
-		
-	}
-});
-app.directive("filaDetails", function(){
-	return{
-		restrict : "E",
-		template : "<div id='{{adiProRecord.productId}}' class='hide' ng-repeat ='adiProRecord in filaRecords'>" +
-				"<div class='siteNav'>Home > Footwear > Men's Footwear > sport shoes > Fila > <span class='active'>Fila {{adiProRecord.shoesType}} shoes <span></div>" +
-					"<article class='leftColPro'>" +
-						"<div><img src='{{adiProRecord.src}}' width='300' height = '450' /></div>" +
-					"</article>" +
-					"<article class='rightColPro'>" +
-						"<h1 class='catagoryTitlePro bb-s pb-m'>Fila {{adiProRecord.shoesType}} shoes</h1>" +
-						"<div class='clearfix pt-s pb-s bb-s'>" +
-								"<span class='glyphicon glyphicon-star'></span>" +
-								"<span class='glyphicon glyphicon-star'></span>" +
-								"<span class='glyphicon glyphicon-star'></span>" +
-								"<span class='glyphicon glyphicon-star-empty'></span>" +
-								"<span class='glyphicon glyphicon-star-empty'></span>" +
-								"<span class='pl-s'>{{adiProRecord.ratings}} Reviews</span>" +
-						"</div>" +
-						"<div class='clearfix pt-s pb-m bb-s'>" +
-							"<div class='pull-left'>" +
-								"<div class='txt-light txt-15'>Select Color</div>" +
-								"<div><input type='radio' name='{{adiProRecord.colorName}}' checked/><span class='pl-s pr-s'>White</span><input type='radio' name='{{adiProRecord.colorName}}' /><span class='pl-s pr-s'>Black</span></div>" +
-							"</div>" +
-							"<div class='pull-right'>" +
-								"<div class='txt-light txt-15'>Select Size</div>" +
-								"<div><input type='radio' name='{{adiProRecord.SizeName}}' checked/><span class='pl-s pr-s'>6</span><input type='radio' name='{{adiProRecord.SizeName}}' /><span class='pl-s pr-s'>7</span> <input type='radio' name='{{adiProRecord.SizeName}}' /><span class='pl-s pr-s'>8</span><input type='radio' name='{{adiProRecord.SizeName}}' /><span class='pl-s pr-s'>9</span></div>" +
-							"</div>" +
-						"</div>" +
-						"<div class='pt-s txt-15 txt-light'>last Price: <span class='linrThrought'>Rs {{adiProRecord.prevPrice}}</span></div>" +
-						"<div class='pt-s'>" +
-							"<span class='txt-22'>Rs {{adiProRecord.currPrice}}</span> <span class='pl-s success'>20% Off</span>" +
-						"</div>" +
-						"<div class='txt-12'>Selling Price</div>" +
-						"<div class='pt-m txt-13'>(Free delivery)</div>" +
-						"<div class='pt-m w-300px'>" +
-							"<button type='button' class='btn btn-warning btn-block btn-lg'>ADD TO CART</button>" +
-							"<button type='button' class='btn btn-success btn-block btn-lg'>BUY NOW</button>" +
-							"<a type='button' class='btn btn-primary btn-sm mt-m' href='home.html'>BACK TO PRODUCTS</a>" +
-						"</div>" +
-					"</article>" +
-			"</div>"		
-	}
-});
-app.directive("lottoShoes", function(){
-	return{
-		restrict : "E",
-		template : "<div class='product' id='{{adiRecord.id}}' ng-repeat ='adiRecord in lottoRecords' ng-click='lottoDetails(adiRecord.id)'>" +
-							"<div class='imgDiv'><img src='{{adiRecord.src}}' width='210' height = '150' /></div>" +
-							"<div class='pt-m'>Lotto {{adiRecord.shoesType}} Shoes</div>" + 
-							"<div class='clearfix pt-s'>" +
-								"<span class='glyphicon glyphicon-star'></span>" +
-								"<span class='glyphicon glyphicon-star'></span>" +
-								"<span class='glyphicon glyphicon-star'></span>" +
-								"<span class='glyphicon glyphicon-star-empty'></span>" +
-								"<span class='glyphicon glyphicon-star-empty'></span>" +
-								"<span class='pl-s'>({{adiRecord.ratings}} ratings)</span>" +
-							"</div>" +
-							"<div class='clearfix pt-s'><span>Rs {{adiRecord.currPrice}}</span> <span class='pl-s linrThrought txt-light'>Rs {{adiRecord.prevPrice}}</span><span class='text-success pl-s'>{{adiRecord.discount}}</span> </div>" +
-						"</div>" 
-		
-	}
-});
-app.directive("lottoDetails", function(){
-	return{
-		restrict : "E",
-		template : "<div id='{{adiProRecord.productId}}' class='hide' ng-repeat ='adiProRecord in lottoRecords'>" +
-				"<div class='siteNav'>Home > Footwear > Men's Footwear > sport shoes > Lotto > <span class='active'>Lotto {{adiProRecord.shoesType}} shoes <span></div>" +
-					"<article class='leftColPro'>" +
-						"<div><img src='{{adiProRecord.src}}' width='300' height = '450' /></div>" +
-					"</article>" +
-					"<article class='rightColPro'>" +
-						"<h1 class='catagoryTitlePro bb-s pb-m'>Lotto {{adiProRecord.shoesType}} shoes</h1>" +
-						"<div class='clearfix pt-s pb-s bb-s'>" +
-								"<span class='glyphicon glyphicon-star'></span>" +
-								"<span class='glyphicon glyphicon-star'></span>" +
-								"<span class='glyphicon glyphicon-star'></span>" +
-								"<span class='glyphicon glyphicon-star-empty'></span>" +
-								"<span class='glyphicon glyphicon-star-empty'></span>" +
-								"<span class='pl-s'>{{adiProRecord.ratings}} Reviews</span>" +
-						"</div>" +
-						"<div class='clearfix pt-s pb-m bb-s'>" +
-							"<div class='pull-left'>" +
-								"<div class='txt-light txt-15'>Select Color</div>" +
-								"<div><input type='radio' name='{{adiProRecord.colorName}}' checked/><span class='pl-s pr-s'>White</span><input type='radio' name='{{adiProRecord.colorName}}' /><span class='pl-s pr-s'>Black</span></div>" +
-							"</div>" +
-							"<div class='pull-right'>" +
-								"<div class='txt-light txt-15'>Select Size</div>" +
-								"<div><input type='radio' name='{{adiProRecord.SizeName}}' checked/><span class='pl-s pr-s'>6</span><input type='radio' name='{{adiProRecord.SizeName}}' /><span class='pl-s pr-s'>7</span> <input type='radio' name='{{adiProRecord.SizeName}}' /><span class='pl-s pr-s'>8</span><input type='radio' name='{{adiProRecord.SizeName}}' /><span class='pl-s pr-s'>9</span></div>" +
-							"</div>" +
-						"</div>" +
-						"<div class='pt-s txt-15 txt-light'>last Price: <span class='linrThrought'>Rs {{adiProRecord.prevPrice}}</span></div>" +
-						"<div class='pt-s'>" +
-							"<span class='txt-22'>Rs {{adiProRecord.currPrice}}</span> <span class='pl-s success'>20% Off</span>" +
-						"</div>" +
-						"<div class='txt-12'>Selling Price</div>" +
-						"<div class='pt-m txt-13'>(Free delivery)</div>" +
-						"<div class='pt-m w-300px'>" +
-							"<button type='button' class='btn btn-warning btn-block btn-lg'>ADD TO CART</button>" +
-							"<button type='button' class='btn btn-success btn-block btn-lg'>BUY NOW</button>" +
-							"<a type='button' class='btn btn-primary btn-sm mt-m' href='home.html'>BACK TO PRODUCTS</a>" +
-						"</div>" +
-					"</article>" +
-			"</div>"		
-	}
-});
-app.directive("nikeShoes", function(){
-	return{
-		restrict : "E",
-		template : "<div class='product' id='{{adiRecord.id}}' ng-repeat ='adiRecord in nikeRecords' ng-click='nikeDetails(adiRecord.id)'>" +
-							"<div class='imgDiv'><img src='{{adiRecord.src}}' width='210' height = '150' /></div>" +
-							"<div class='pt-m'>Nike {{adiRecord.shoesType}} Shoes</div>" + 
-							"<div class='clearfix pt-s'>" +
-								"<span class='glyphicon glyphicon-star'></span>" +
-								"<span class='glyphicon glyphicon-star'></span>" +
-								"<span class='glyphicon glyphicon-star'></span>" +
-								"<span class='glyphicon glyphicon-star-empty'></span>" +
-								"<span class='glyphicon glyphicon-star-empty'></span>" +
-								"<span class='pl-s'>({{adiRecord.ratings}} ratings)</span>" +
-							"</div>" +
-							"<div class='clearfix pt-s'><span>Rs {{adiRecord.currPrice}}</span> <span class='pl-s linrThrought txt-light'>Rs {{adiRecord.prevPrice}}</span><span class='text-success pl-s'>{{adiRecord.discount}}</span> </div>" +
-						"</div>" 
-		
-	}
-});
-app.directive("nikeDetails", function(){
-	return{
-		restrict : "E",
-		template : "<div id='{{adiProRecord.productId}}' class='hide' ng-repeat ='adiProRecord in nikeRecords'>" +
-				"<div class='siteNav'>Home > Footwear > Men's Footwear > sport shoes > Nike > <span class='active'>Nike {{adiProRecord.shoesType}} shoes <span></div>" +
-					"<article class='leftColPro'>" +
-						"<div><img src='{{adiProRecord.src}}' width='300' height = '450' /></div>" +
-					"</article>" +
-					"<article class='rightColPro'>" +
-						"<h1 class='catagoryTitlePro bb-s pb-m'>Nike {{adiProRecord.shoesType}} shoes</h1>" +
-						"<div class='clearfix pt-s pb-s bb-s'>" +
-								"<span class='glyphicon glyphicon-star'></span>" +
-								"<span class='glyphicon glyphicon-star'></span>" +
-								"<span class='glyphicon glyphicon-star'></span>" +
-								"<span class='glyphicon glyphicon-star-empty'></span>" +
-								"<span class='glyphicon glyphicon-star-empty'></span>" +
-								"<span class='pl-s'>{{adiProRecord.ratings}} Reviews</span>" +
-						"</div>" +
-						"<div class='clearfix pt-s pb-m bb-s'>" +
-							"<div class='pull-left'>" +
-								"<div class='txt-light txt-15'>Select Color</div>" +
-								"<div><input type='radio' name='{{adiProRecord.colorName}}' checked/><span class='pl-s pr-s'>White</span><input type='radio' name='{{adiProRecord.colorName}}' /><span class='pl-s pr-s'>Black</span></div>" +
-							"</div>" +
-							"<div class='pull-right'>" +
-								"<div class='txt-light txt-15'>Select Size</div>" +
-								"<div><input type='radio' name='{{adiProRecord.SizeName}}' checked/><span class='pl-s pr-s'>6</span><input type='radio' name='{{adiProRecord.SizeName}}' /><span class='pl-s pr-s'>7</span> <input type='radio' name='{{adiProRecord.SizeName}}' /><span class='pl-s pr-s'>8</span><input type='radio' name='{{adiProRecord.SizeName}}' /><span class='pl-s pr-s'>9</span></div>" +
-							"</div>" +
-						"</div>" +
-						"<div class='pt-s txt-15 txt-light'>last Price: <span class='linrThrought'>Rs {{adiProRecord.prevPrice}}</span></div>" +
-						"<div class='pt-s'>" +
-							"<span class='txt-22'>Rs {{adiProRecord.currPrice}}</span> <span class='pl-s success'>20% Off</span>" +
-						"</div>" +
-						"<div class='txt-12'>Selling Price</div>" +
-						"<div class='pt-m txt-13'>(Free delivery)</div>" +
-						"<div class='pt-m w-300px'>" +
-							"<button type='button' class='btn btn-warning btn-block btn-lg'>ADD TO CART</button>" +
-							"<button type='button' class='btn btn-success btn-block btn-lg'>BUY NOW</button>" +
-							"<a type='button' class='btn btn-primary btn-sm mt-m' href='home.html'>BACK TO PRODUCTS</a>" +
-						"</div>" +
-					"</article>" +
-			"</div>"		
-	}
-});
 app.controller("brandController", function($scope){
 	$scope.searchBox = "";
-	$scope.adiRecords = [
+	$scope.AdiClass = true;
+	$scope.FilaClass = true;
+	$scope.LottoClass = true;
+	$scope.NikeClass = true;
+	$scope.productRecords = [
 	{
 		"id" : "Adi1",
 		"productId" : "AdiPro1",
+		"ProClass" : "AdiClass",
 		"colorName" : "Adi1Col",
 		"SizeName" : "Adi1Size",
 		"src" : "img/Adidas/shoes.jpeg",
-		"shoesType" : "Running",
+		"shoesType" : "Adidas Running",
 		"ratings" : "154",
 		"currPrice" : "3999",
 		"prevPrice" : "9999",
@@ -268,10 +23,11 @@ app.controller("brandController", function($scope){
 	{
 		"id" : "Adi2",
 		"productId" : "AdiPro2",
+		"ProClass" : "AdiClass",
 		"colorName" : "Adi2Col",
 		"SizeName" : "Adi2Size",
 		"src" : "img/Adidas/shoes1.jpeg",
-		"shoesType" : "casual",
+		"shoesType" : "Adidas casual",
 		"ratings" : "100",
 		"currPrice" : "2999",
 		"prevPrice" : "6999",
@@ -280,10 +36,11 @@ app.controller("brandController", function($scope){
 	{
 		"id" : "Adi3",
 		"productId" : "AdiPro3",
+		"ProClass" : "AdiClass",
 		"colorName" : "Adi3Col",
 		"SizeName" : "Adi3Size",
 		"src" : "img/Adidas/shoes2.jpeg",
-		"shoesType" : "Running",
+		"shoesType" : "Adidas Running",
 		"ratings" : "244",
 		"currPrice" : "1999",
 		"prevPrice" : "5999",
@@ -292,10 +49,11 @@ app.controller("brandController", function($scope){
 	{
 		"id" : "Adi4",
 		"productId" : "AdiPro4",
+		"ProClass" : "AdiClass",
 		"colorName" : "Adi4Col",
 		"SizeName" : "Adi4Size",
 		"src" : "img/Adidas/shoes3.jpeg",
-		"shoesType" : "sport",
+		"shoesType" : "Adidas sport",
 		"ratings" : "201",
 		"currPrice" : "1599",
 		"prevPrice" : "2099",
@@ -304,10 +62,11 @@ app.controller("brandController", function($scope){
 	{
 		"id" : "Adi5",
 		"productId" : "AdiPro5",
+		"ProClass" : "AdiClass",
 		"colorName" : "Adi5Col",
 		"SizeName" : "Adi5Size",
 		"src" : "img/Adidas/shoes4.jpeg",
-		"shoesType" : "spring",
+		"shoesType" : "Adidas spring",
 		"ratings" : "350",
 		"currPrice" : "6999",
 		"prevPrice" : "9999",
@@ -316,10 +75,11 @@ app.controller("brandController", function($scope){
 	{
 		"id" : "Adi6",
 		"productId" : "AdiPro6",
+		"ProClass" : "AdiClass",
 		"colorName" : "Adi6Col",
 		"SizeName" : "Adi6Size",
 		"src" : "img/Adidas/shoes5.jpeg",
-		"shoesType" : "football",
+		"shoesType" : "Adidas football",
 		"ratings" : "304",
 		"currPrice" : "7999",
 		"prevPrice" : "9999",
@@ -328,10 +88,11 @@ app.controller("brandController", function($scope){
 	{
 		"id" : "Adi7",
 		"productId" : "AdiPro7",
+		"ProClass" : "AdiClass",
 		"colorName" : "Adi7Col",
 		"SizeName" : "Adi7Size",
 		"src" : "img/Adidas/shoes6.jpeg",
-		"shoesType" : "cricket",
+		"shoesType" : "Adidas cricket",
 		"ratings" : "54",
 		"currPrice" : "1099",
 		"prevPrice" : "2999",
@@ -340,24 +101,24 @@ app.controller("brandController", function($scope){
 	{
 		"id" : "Adi8",
 		"productId" : "AdiPro8",
+		"ProClass" : "AdiClass",
 		"colorName" : "Adi8Col",
 		"SizeName" : "Adi8Size",
 		"src" : "img/Adidas/shoes7.jpeg",
-		"shoesType" : "Running",
+		"shoesType" : "Adidas Running",
 		"ratings" : "54",
 		"currPrice" : "5099",
 		"prevPrice" : "11999",
 		"discount" : "60%"
-	}
-	];
-	$scope.filaRecords = [
+	},
 	{
 		"id" : "fila1",
 		"productId" : "filaPro1",
+		"ProClass" : "FilaClass",
 		"colorName" : "fila1Col",
 		"SizeName" : "fila1Size",
 		"src" : "img/fila/shoes.jpeg",
-		"shoesType" : "Running",
+		"shoesType" : "Fila Running",
 		"ratings" : "154",
 		"currPrice" : "3,999",
 		"prevPrice" : "9,999",
@@ -366,10 +127,11 @@ app.controller("brandController", function($scope){
 	{
 		"id" : "fila2",
 		"productId" : "filaPro2",
+		"ProClass" : "FilaClass",
 		"colorName" : "fila2Col",
 		"SizeName" : "fila2Size",
 		"src" : "img/fila/shoes1.jpeg",
-		"shoesType" : "casual",
+		"shoesType" : "Fila casual",
 		"ratings" : "100",
 		"currPrice" : "2,999",
 		"prevPrice" : "6,999",
@@ -378,10 +140,11 @@ app.controller("brandController", function($scope){
 	{
 		"id" : "fila3",
 		"productId" : "filaPro3",
+		"ProClass" : "FilaClass",
 		"colorName" : "fila3Col",
 		"SizeName" : "fila3Size",
 		"src" : "img/fila/shoes2.jpeg",
-		"shoesType" : "Running",
+		"shoesType" : "Fila Running",
 		"ratings" : "244",
 		"currPrice" : "1,999",
 		"prevPrice" : "5,999",
@@ -390,10 +153,11 @@ app.controller("brandController", function($scope){
 	{
 		"id" : "fila4",
 		"productId" : "filaPro4",
+		"ProClass" : "FilaClass",
 		"colorName" : "fila4Col",
 		"SizeName" : "fila4Size",
 		"src" : "img/fila/shoes3.jpeg",
-		"shoesType" : "sport",
+		"shoesType" : "Fila sport",
 		"ratings" : "201",
 		"currPrice" : "1,599",
 		"prevPrice" : "2,099",
@@ -402,10 +166,11 @@ app.controller("brandController", function($scope){
 	{
 		"id" : "fila5",
 		"productId" : "filaPro5",
+		"ProClass" : "FilaClass",
 		"colorName" : "fila5Col",
 		"SizeName" : "fila5Size",
 		"src" : "img/fila/shoes4.jpeg",
-		"shoesType" : "spring",
+		"shoesType" : "Fila spring",
 		"ratings" : "350",
 		"currPrice" : "6,999",
 		"prevPrice" : "9,999",
@@ -414,10 +179,11 @@ app.controller("brandController", function($scope){
 	{
 		"id" : "fila6",
 		"productId" : "filaPro6",
+		"ProClass" : "FilaClass",
 		"colorName" : "fila6Col",
 		"SizeName" : "fila6Size",
 		"src" : "img/fila/shoes5.jpeg",
-		"shoesType" : "football",
+		"shoesType" : "Fila football",
 		"ratings" : "304",
 		"currPrice" : "7,999",
 		"prevPrice" : "9,999",
@@ -426,10 +192,11 @@ app.controller("brandController", function($scope){
 	{
 		"id" : "fila7",
 		"productId" : "filaPro7",
+		"ProClass" : "FilaClass",
 		"colorName" : "fila7Col",
 		"SizeName" : "fila7Size",
 		"src" : "img/fila/shoes6.jpeg",
-		"shoesType" : "cricket",
+		"shoesType" : "Fila cricket",
 		"ratings" : "54",
 		"currPrice" : "1,099",
 		"prevPrice" : "2,999",
@@ -438,24 +205,24 @@ app.controller("brandController", function($scope){
 	{
 		"id" : "fila8",
 		"productId" : "filaPro8",
+		"ProClass" : "FilaClass",
 		"colorName" : "fila8Col",
 		"SizeName" : "fila8Size",
 		"src" : "img/fila/shoes7.jpeg",
-		"shoesType" : "running",
+		"shoesType" : "Fila running",
 		"ratings" : "54",
 		"currPrice" : "5,099",
 		"prevPrice" : "11,999",
 		"discount" : "60%"
-	}
-	];
-	$scope.lottoRecords = [
+	},
 	{
 		"id" : "lotto1",
 		"productId" : "lottoPro1",
+		"ProClass" : "LottoClass",
 		"colorName" : "lotto1Col",
 		"SizeName" : "lotto1Size",
 		"src" : "img/lotto/shoes.jpeg",
-		"shoesType" : "Running",
+		"shoesType" : "Lotto Running",
 		"ratings" : "154",
 		"currPrice" : "3,999",
 		"prevPrice" : "9,999",
@@ -464,10 +231,11 @@ app.controller("brandController", function($scope){
 	{
 		"id" : "lotto2",
 		"productId" : "lottoPro2",
+		"ProClass" : "LottoClass",
 		"colorName" : "lotto2Col",
 		"SizeName" : "lotto2Size",
 		"src" : "img/lotto/shoes1.jpeg",
-		"shoesType" : "casual",
+		"shoesType" : "Lotto casual",
 		"ratings" : "100",
 		"currPrice" : "2,999",
 		"prevPrice" : "6,999",
@@ -476,10 +244,11 @@ app.controller("brandController", function($scope){
 	{
 		"id" : "lotto3",
 		"productId" : "lottoPro3",
+		"ProClass" : "LottoClass",
 		"colorName" : "lotto3Col",
 		"SizeName" : "lotto3Size",
 		"src" : "img/lotto/shoes2.jpeg",
-		"shoesType" : "Running",
+		"shoesType" : "Lotto Running",
 		"ratings" : "244",
 		"currPrice" : "1,999",
 		"prevPrice" : "5,999",
@@ -488,10 +257,11 @@ app.controller("brandController", function($scope){
 	{
 		"id" : "lotto4",
 		"productId" : "lottoPro4",
+		"ProClass" : "LottoClass",
 		"colorName" : "lotto4Col",
 		"SizeName" : "lotto4Size",
 		"src" : "img/lotto/shoes3.jpeg",
-		"shoesType" : "sport",
+		"shoesType" : "Lotto sport",
 		"ratings" : "201",
 		"currPrice" : "1,599",
 		"prevPrice" : "2,099",
@@ -500,10 +270,11 @@ app.controller("brandController", function($scope){
 	{
 		"id" : "lotto5",
 		"productId" : "lottoPro5",
+		"ProClass" : "LottoClass",
 		"colorName" : "lotto5Col",
 		"SizeName" : "lotto5Size",
 		"src" : "img/lotto/shoes4.jpeg",
-		"shoesType" : "spring",
+		"shoesType" : "Lotto spring",
 		"ratings" : "350",
 		"currPrice" : "6,999",
 		"prevPrice" : "9,999",
@@ -512,10 +283,11 @@ app.controller("brandController", function($scope){
 	{
 		"id" : "lotto6",
 		"productId" : "lottoPro6",
+		"ProClass" : "LottoClass",
 		"colorName" : "lotto6Col",
 		"SizeName" : "lotto6Size",
 		"src" : "img/lotto/shoes5.jpeg",
-		"shoesType" : "football",
+		"shoesType" : "Lotto football",
 		"ratings" : "304",
 		"currPrice" : "7,999",
 		"prevPrice" : "9,999",
@@ -524,10 +296,11 @@ app.controller("brandController", function($scope){
 	{
 		"id" : "lotto7",
 		"productId" : "lottoPro7",
+		"ProClass" : "LottoClass",
 		"colorName" : "lotto7Col",
 		"SizeName" : "lotto7Size",
 		"src" : "img/lotto/shoes6.jpeg",
-		"shoesType" : "cricket",
+		"shoesType" : "Lotto cricket",
 		"ratings" : "54",
 		"currPrice" : "1,099",
 		"prevPrice" : "2,999",
@@ -536,24 +309,24 @@ app.controller("brandController", function($scope){
 	{
 		"id" : "lotto8",
 		"productId" : "lottoPro8",
+		"ProClass" : "LottoClass",
 		"colorName" : "lotto8Col",
 		"SizeName" : "lotto8Size",
 		"src" : "img/lotto/shoes7.jpeg",
-		"shoesType" : "running",
+		"shoesType" : "Lotto running",
 		"ratings" : "54",
 		"currPrice" : "5,099",
 		"prevPrice" : "11,999",
 		"discount" : "60%"
-	}
-	];
-	$scope.nikeRecords = [
+	},
 	{
 		"id" : "nike1",
 		"productId" : "nikePro1",
+		"ProClass" : "NikeClass",
 		"colorName" : "nike1Col",
 		"SizeName" : "nike1Size",
 		"src" : "img/nike/shoes.jpeg",
-		"shoesType" : "Running",
+		"shoesType" : "Nike Running",
 		"ratings" : "154",
 		"currPrice" : "3,999",
 		"prevPrice" : "9,999",
@@ -562,10 +335,11 @@ app.controller("brandController", function($scope){
 	{
 		"id" : "nike2",
 		"productId" : "nikePro2",
+		"ProClass" : "NikeClass",
 		"colorName" : "nike2Col",
 		"SizeName" : "nike2Size",
 		"src" : "img/nike/shoes1.jpeg",
-		"shoesType" : "casual",
+		"shoesType" : "Nike casual",
 		"ratings" : "100",
 		"currPrice" : "2,999",
 		"prevPrice" : "6,999",
@@ -574,10 +348,11 @@ app.controller("brandController", function($scope){
 	{
 		"id" : "nike3",
 		"productId" : "nikePro3",
+		"ProClass" : "NikeClass",
 		"colorName" : "nike3Col",
 		"SizeName" : "nike3Size",
 		"src" : "img/nike/shoes2.jpeg",
-		"shoesType" : "Running",
+		"shoesType" : "Nike Running",
 		"ratings" : "244",
 		"currPrice" : "1,999",
 		"prevPrice" : "5,999",
@@ -586,10 +361,11 @@ app.controller("brandController", function($scope){
 	{
 		"id" : "nike4",
 		"productId" : "nikePro4",
+		"ProClass" : "NikeClass",
 		"colorName" : "nike4Col",
 		"SizeName" : "nike4Size",
 		"src" : "img/nike/shoes3.jpeg",
-		"shoesType" : "sport",
+		"shoesType" : "Nike sport",
 		"ratings" : "201",
 		"currPrice" : "1,599",
 		"prevPrice" : "2,099",
@@ -598,10 +374,11 @@ app.controller("brandController", function($scope){
 	{
 		"id" : "nike5",
 		"productId" : "nikePro5",
+		"ProClass" : "NikeClass",
 		"colorName" : "nike5Col",
 		"SizeName" : "nike5Size",
 		"src" : "img/nike/shoes4.jpeg",
-		"shoesType" : "spring",
+		"shoesType" : "Nike spring",
 		"ratings" : "350",
 		"currPrice" : "6,999",
 		"prevPrice" : "9,999",
@@ -610,10 +387,11 @@ app.controller("brandController", function($scope){
 	{
 		"id" : "nike6",
 		"productId" : "nikePro6",
+		"ProClass" : "NikeClass",
 		"colorName" : "nike6Col",
 		"SizeName" : "nike6Size",
 		"src" : "img/nike/shoes5.jpeg",
-		"shoesType" : "football",
+		"shoesType" : "Nike football",
 		"ratings" : "304",
 		"currPrice" : "7,999",
 		"prevPrice" : "9,999",
@@ -622,10 +400,11 @@ app.controller("brandController", function($scope){
 	{
 		"id" : "nike7",
 		"productId" : "nikePro7",
+		"ProClass" : "NikeClass",
 		"colorName" : "nike7Col",
 		"SizeName" : "nike7Size",
 		"src" : "img/nike/shoes6.jpeg",
-		"shoesType" : "cricket",
+		"shoesType" : "Nike cricket",
 		"ratings" : "54",
 		"currPrice" : "1,099",
 		"prevPrice" : "2,999",
@@ -634,51 +413,18 @@ app.controller("brandController", function($scope){
 	{
 		"id" : "nike8",
 		"productId" : "nikePro8",
+		"ProClass" : "NikeClass",
 		"colorName" : "nike8Col",
 		"SizeName" : "nike8Size",
 		"src" : "img/nike/shoes7.jpeg",
-		"shoesType" : "running",
+		"shoesType" : "Nike running",
 		"ratings" : "54",
 		"currPrice" : "5,099",
 		"prevPrice" : "11,999",
 		"discount" : "60%"
 	}
 	];
-	
-	$scope.allProduct = [
-	{"id" : "Adi1","currPrice" : "3999"},
-	{"id" : "Adi2","currPrice" : "2999"},
-	{"id" : "Adi3","currPrice" : "1999"},
-	{"id" : "Adi4","currPrice" : "1599"},
-	{"id" : "Adi5","currPrice" : "6999"},
-	{"id" : "Adi6","currPrice" : "7999"},
-	{"id" : "Adi7","currPrice" : "1099"},
-	{"id" : "Adi8","currPrice" : "5099"},
-	{"id" : "fila1","currPrice" : "3999"},
-	{"id" : "fila2","currPrice" : "2999"},
-	{"id" : "fila3","currPrice" : "1999"},
-	{"id" : "fila4","currPrice" : "1599"},
-	{"id" : "fila5","currPrice" : "6999"},
-	{"id" : "fila6","currPrice" : "7999"},
-	{"id" : "fila7","currPrice" : "1099"},
-	{"id" : "fila8","currPrice" : "5099"},
-	{"id" : "lotto1","currPrice" : "3999"},
-	{"id" : "lotto2","currPrice" : "2999"},
-	{"id" : "lotto3","currPrice" : "1999"},
-	{"id" : "lotto4","currPrice" : "1599"},
-	{"id" : "lotto5","currPrice" : "6999"},
-	{"id" : "lotto6","currPrice" : "7999"},
-	{"id" : "lotto7","currPrice" : "1099"},
-	{"id" : "lotto8","currPrice" : "5099"},
-	{"id" : "nike1","currPrice" : "3999"},
-	{"id" : "nike2","currPrice" : "2999"},
-	{"id" : "nike3","currPrice" : "1999"},
-	{"id" : "nike4","currPrice" : "1599"},
-	{"id" : "nike5","currPrice" : "6999"},
-	{"id" : "nike6","currPrice" : "7999"},
-	{"id" : "nike7","currPrice" : "1099"},
-	{"id" : "nike8","currPrice" : "5099"}
-	];
+
 	$scope.adiDetails = function(adiid){
 		if(adiid == "Adi1"){
 		document.getElementById("jqProducts").className = "hide";
@@ -837,329 +583,107 @@ app.controller("brandController", function($scope){
 		angular.element(jqDownArrowPri).addClass("show");
 				
 	}
-	$scope.checkFilter = function(){
-		$scope.searchBox = "";
-		if($scope.adidasFilter && $scope.filafilterModel && $scope.lottofilterModel && $scope.nikefilterModel){
-			angular.element(adidasProduct).removeClass("hide").addClass("show");
-			angular.element(filaProduct).removeClass("hide").addClass("show");
-			angular.element(lottoProduct).removeClass("hide").addClass("show");
-			angular.element(nikeProduct).removeClass("hide").addClass("show");
-		}
-		else if(!($scope.adidasFilter) && $scope.filafilterModel && $scope.lottofilterModel && $scope.nikefilterModel){
-			angular.element(adidasProduct).removeClass("show").addClass("hide");
-			angular.element(filaProduct).removeClass("hide").addClass("show");
-			angular.element(lottoProduct).removeClass("hide").addClass("show");
-			angular.element(nikeProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.adidasFilter && $scope.filafilterModel && $scope.lottofilterModel){
-			angular.element(adidasProduct).removeClass("hide").addClass("show");
-			angular.element(filaProduct).removeClass("hide").addClass("show");
-			angular.element(lottoProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.adidasFilter && $scope.lottofilterModel && $scope.nikefilterModel){
-			angular.element(adidasProduct).removeClass("hide").addClass("show");
-			angular.element(lottoProduct).removeClass("hide").addClass("show");
-			angular.element(nikeProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.adidasFilter && $scope.filafilterModel && $scope.nikefilterModel){
-			angular.element(adidasProduct).removeClass("hide").addClass("show");
-			angular.element(filaProduct).removeClass("hide").addClass("show");
-			angular.element(nikeProduct).removeClass("hide").addClass("show");
-		}
-		else if(!($scope.adidasFilter) && $scope.filafilterModel && $scope.lottofilterModel){
-			angular.element(adidasProduct).removeClass("show").addClass("hide");
-			angular.element(filaProduct).removeClass("hide").addClass("show");
-			angular.element(lottoProduct).removeClass("hide").addClass("show");
-		}
-		else if(!($scope.adidasFilter) && $scope.lottofilterModel && $scope.nikefilterModel){
-			angular.element(adidasProduct).removeClass("show").addClass("hide");
-			angular.element(lottoProduct).removeClass("hide").addClass("show");
-			angular.element(nikeProduct).removeClass("hide").addClass("show");
-		}
-		else if(!($scope.adidasFilter) && $scope.filafilterModel && $scope.nikefilterModel){
-			angular.element(adidasProduct).removeClass("show").addClass("hide");
-			angular.element(filaProduct).removeClass("hide").addClass("show");
-			angular.element(nikeProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.adidasFilter && $scope.filafilterModel){
-			angular.element(adidasProduct).removeClass("hide").addClass("show");
-			angular.element(filaProduct).removeClass("hide").addClass("show");
-		}
-		else if(!($scope.adidasFilter) && $scope.filafilterModel){
-			angular.element(adidasProduct).removeClass("show").addClass("hide");
-			angular.element(filaProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.adidasFilter && $scope.lottofilterModel){
-			angular.element(adidasProduct).removeClass("hide").addClass("show");
-			angular.element(lottoProduct).removeClass("hide").addClass("show");
-		}
-		else if(!($scope.adidasFilter) && $scope.lottofilterModel){
-			angular.element(adidasProduct).removeClass("show").addClass("hide");
-			angular.element(lottoProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.adidasFilter && $scope.nikefilterModel){
-			angular.element(adidasProduct).removeClass("hide").addClass("show");
-			angular.element(nikeProduct).removeClass("hide").addClass("show");
-		}
-		else if(!($scope.adidasFilter) && $scope.nikefilterModel){
-			angular.element(adidasProduct).removeClass("show").addClass("hide");
-			angular.element(nikeProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.adidasFilter){
-			angular.element(adidasProduct).removeClass("hide").addClass("show");
-			angular.element(filaProduct).removeClass("show").addClass("hide");
-			angular.element(lottoProduct).removeClass("show").addClass("hide");
-			angular.element(nikeProduct).removeClass("show").addClass("hide");
-		}
-		else{
-			angular.element(filaProduct).removeClass("hide");
-			angular.element(lottoProduct).removeClass("hide");
-			angular.element(nikeProduct).removeClass("hide");
-		}
-	}
-	$scope.filaFilter = function(){
-		$scope.searchBox = "";
-		if($scope.adidasFilter && $scope.filafilterModel && $scope.lottofilterModel && $scope.nikefilterModel){
-			angular.element(adidasProduct).removeClass("hide").addClass("show");
-			angular.element(filaProduct).removeClass("hide").addClass("show");
-			angular.element(lottoProduct).removeClass("hide").addClass("show");
-			angular.element(nikeProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.adidasFilter && !($scope.filafilterModel) && $scope.lottofilterModel && $scope.nikefilterModel){
-			angular.element(adidasProduct).removeClass("hide").addClass("show");
-			angular.element(filaProduct).removeClass("show").addClass("hide");
-			angular.element(lottoProduct).removeClass("hide").addClass("show");
-			angular.element(nikeProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.adidasFilter && $scope.filafilterModel && $scope.lottofilterModel){
-			angular.element(adidasProduct).removeClass("hide").addClass("show");
-			angular.element(filaProduct).removeClass("hide").addClass("show");
-			angular.element(lottoProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.adidasFilter && $scope.filafilterModel && $scope.nikefilterModel){
-			angular.element(adidasProduct).removeClass("hide").addClass("show");
-			angular.element(filaProduct).removeClass("hide").addClass("show");
-			angular.element(nikeProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.lottofilterModel && $scope.filafilterModel && $scope.nikefilterModel){
-			angular.element(lottoProduct).removeClass("hide").addClass("show");
-			angular.element(filaProduct).removeClass("hide").addClass("show");
-			angular.element(nikeProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.adidasFilter && !($scope.filafilterModel) && $scope.lottofilterModel){
-			angular.element(adidasProduct).removeClass("hide").addClass("show");
-			angular.element(filaProduct).removeClass("show").addClass("hide");
-			angular.element(lottoProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.adidasFilter && !($scope.filafilterModel) && $scope.nikefilterModel){
-			angular.element(adidasProduct).removeClass("hide").addClass("show");
-			angular.element(filaProduct).removeClass("show").addClass("hide");
-			angular.element(nikeProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.lottofilterModel && !($scope.filafilterModel) && $scope.nikefilterModel){
-			angular.element(lottoProduct).removeClass("hide").addClass("show");
-			angular.element(filaProduct).removeClass("show").addClass("hide");
-			angular.element(nikeProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.adidasFilter && $scope.filafilterModel){
-			angular.element(adidasProduct).removeClass("hide").addClass("show");
-			angular.element(filaProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.adidasFilter && !($scope.filafilterModel)){
-			angular.element(adidasProduct).removeClass("hide").addClass("show");
-			angular.element(filaProduct).removeClass("show").addClass("hide");
-		}
-		else if($scope.lottofilterModel && $scope.filafilterModel){
-			angular.element(lottoProduct).removeClass("hide").addClass("show");
-			angular.element(filaProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.lottofilterModel && !($scope.filafilterModel)){
-			angular.element(lottoProduct).removeClass("hide").addClass("show");
-			angular.element(filaProduct).removeClass("show").addClass("hide");
-		}
-		else if($scope.nikefilterModel && $scope.filafilterModel){
-			angular.element(nikeProduct).removeClass("hide").addClass("show");
-			angular.element(filaProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.nikefilterModel && !($scope.filafilterModel)){
-			angular.element(nikeProduct).removeClass("hide").addClass("show");
-			angular.element(filaProduct).removeClass("show").addClass("hide");
-		}
-		else if($scope.filafilterModel){
-			angular.element(filaProduct).removeClass("hide").addClass("show");
-			angular.element(adidasProduct).removeClass("show").addClass("hide");
-			angular.element(lottoProduct).removeClass("show").addClass("hide");
-			angular.element(nikeProduct).removeClass("show").addClass("hide");
-		}
-		else{
-			angular.element(adidasProduct).removeClass("hide");
-			angular.element(lottoProduct).removeClass("hide");
-			angular.element(nikeProduct).removeClass("hide");
-		}
-	}
-	$scope.lottoFilter = function(){
-		$scope.searchBox = "";
-		if($scope.adidasFilter && $scope.filafilterModel && $scope.lottofilterModel && $scope.nikefilterModel){
-			angular.element(adidasProduct).removeClass("hide").addClass("show");
-			angular.element(filaProduct).removeClass("hide").addClass("show");
-			angular.element(lottoProduct).removeClass("hide").addClass("show");
-			angular.element(nikeProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.adidasFilter && $scope.filafilterModel && !($scope.lottofilterModel) && $scope.nikefilterModel){
-			angular.element(adidasProduct).removeClass("hide").addClass("show");
-			angular.element(filaProduct).removeClass("hide").addClass("show");
-			angular.element(lottoProduct).removeClass("show").addClass("hide");
-			angular.element(nikeProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.adidasFilter && $scope.filafilterModel && $scope.lottofilterModel){
-			angular.element(adidasProduct).removeClass("hide").addClass("show");
-			angular.element(filaProduct).removeClass("hide").addClass("show");
-			angular.element(lottoProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.adidasFilter && $scope.nikefilterModel && $scope.lottofilterModel){
-			angular.element(adidasProduct).removeClass("hide").addClass("show");
-			angular.element(nikeProduct).removeClass("hide").addClass("show");
-			angular.element(lottoProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.filafilterModel && $scope.nikefilterModel && $scope.lottofilterModel){
-			angular.element(filaProduct).removeClass("hide").addClass("show");
-			angular.element(nikeProduct).removeClass("hide").addClass("show");
-			angular.element(lottoProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.adidasFilter && $scope.filafilterModel && !($scope.lottofilterModel)){
-			angular.element(adidasProduct).removeClass("hide").addClass("show");
-			angular.element(filaProduct).removeClass("hide").addClass("show");
-			angular.element(lottoProduct).removeClass("show").addClass("hide");
-		}
-		else if($scope.adidasFilter && $scope.nikefilterModel && !($scope.lottofilterModel)){
-			angular.element(adidasProduct).removeClass("hide").addClass("show");
-			angular.element(nikeProduct).removeClass("hide").addClass("show");
-			angular.element(lottoProduct).removeClass("show").addClass("hide");
-		}
-		else if($scope.filafilterModel && $scope.nikefilterModel && !($scope.lottofilterModel)){
-			angular.element(filaProduct).removeClass("hide").addClass("show");
-			angular.element(nikeProduct).removeClass("hide").addClass("show");
-			angular.element(lottoProduct).removeClass("show").addClass("hide");
-		}
-		else if($scope.adidasFilter && $scope.lottofilterModel){
-			angular.element(adidasProduct).removeClass("hide").addClass("show");
-			angular.element(lottoProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.adidasFilter && !($scope.lottofilterModel)){
-			angular.element(adidasProduct).removeClass("hide").addClass("show");
-			angular.element(lottoProduct).removeClass("show").addClass("hide");
-		}
-		else if($scope.filafilterModel && $scope.lottofilterModel){
-			angular.element(lottoProduct).removeClass("hide").addClass("show");
-			angular.element(filaProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.filafilterModel && !($scope.lottofilterModel)){
-			angular.element(lottoProduct).removeClass("show").addClass("hide");
-			angular.element(filaProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.nikefilterModel && $scope.lottofilterModel){
-			angular.element(lottoProduct).removeClass("hide").addClass("show");
-			angular.element(nikeProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.nikefilterModel && !($scope.lottofilterModel)){
-			angular.element(lottoProduct).removeClass("show").addClass("hide");
-			angular.element(nikeProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.lottofilterModel){
-			angular.element(filaProduct).removeClass("show").addClass("hide");
-			angular.element(adidasProduct).removeClass("show").addClass("hide");
-			angular.element(nikeProduct).removeClass("show").addClass("hide");
-			angular.element(lottoProduct).removeClass("hide").addClass("show");
-		}
-		else{
-			angular.element(adidasProduct).removeClass("hide");
-			angular.element(filaProduct).removeClass("hide");
-			angular.element(nikeProduct).removeClass("hide");
-		}
-	}
-	$scope.nikeFilter = function(){
-		$scope.searchBox = "";
-		if($scope.adidasFilter && $scope.filafilterModel && $scope.lottofilterModel && $scope.nikefilterModel){
-			angular.element(adidasProduct).removeClass("hide").addClass("show");
-			angular.element(filaProduct).removeClass("hide").addClass("show");
-			angular.element(lottoProduct).removeClass("hide").addClass("show");
-			angular.element(nikeProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.adidasFilter && $scope.filafilterModel && $scope.lottofilterModel && !($scope.nikefilterModel)){
-			angular.element(adidasProduct).removeClass("hide").addClass("show");
-			angular.element(filaProduct).removeClass("hide").addClass("show");
-			angular.element(lottoProduct).removeClass("hide").addClass("show");
-			angular.element(nikeProduct).removeClass("show").addClass("hide");
-		}
-		else if($scope.adidasFilter && $scope.filafilterModel && $scope.nikefilterModel){
-			angular.element(adidasProduct).removeClass("hide").addClass("show");
-			angular.element(filaProduct).removeClass("hide").addClass("show");
-			angular.element(nikeProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.adidasFilter && $scope.lottofilterModel && $scope.nikefilterModel){
-			angular.element(adidasProduct).removeClass("hide").addClass("show");
-			angular.element(lottoProduct).removeClass("hide").addClass("show");
-			angular.element(nikeProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.filafilterModel && $scope.lottofilterModel && $scope.nikefilterModel){
-			angular.element(filaProduct).removeClass("hide").addClass("show");
-			angular.element(lottoProduct).removeClass("hide").addClass("show");
-			angular.element(nikeProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.adidasFilter && $scope.filafilterModel && !($scope.nikefilterModel)){
-			angular.element(adidasProduct).removeClass("hide").addClass("show");
-			angular.element(filaProduct).removeClass("hide").addClass("show");
-			angular.element(nikeProduct).removeClass("show").addClass("hide");
-		}
-		else if($scope.adidasFilter && $scope.lottofilterModel && !($scope.nikefilterModel)){
-			angular.element(adidasProduct).removeClass("hide").addClass("show");
-			angular.element(lottoProduct).removeClass("hide").addClass("show");
-			angular.element(nikeProduct).removeClass("show").addClass("hide");
-		}
-		else if($scope.filafilterModel && $scope.lottofilterModel && !($scope.nikefilterModel)){
-			angular.element(filaProduct).removeClass("hide").addClass("show");
-			angular.element(lottoProduct).removeClass("hide").addClass("show");
-			angular.element(nikeProduct).removeClass("show").addClass("hide");
-		}
-		else if($scope.adidasFilter && $scope.nikefilterModel){
-			angular.element(adidasProduct).removeClass("hide").addClass("show");
-			angular.element(nikeProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.adidasFilter && !($scope.nikefilterModel)){
-			angular.element(adidasProduct).removeClass("hide").addClass("show");
-			angular.element(nikeProduct).removeClass("show").addClass("hide");
-		}
-		else if($scope.filafilterModel && $scope.nikefilterModel){
-			angular.element(filaProduct).removeClass("hide").addClass("show");
-			angular.element(nikeProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.filafilterModel && !($scope.nikefilterModel)){
-			angular.element(nikeProduct).removeClass("show").addClass("hide");
-			angular.element(filaProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.lottofilterModel && $scope.nikefilterModel){
-			angular.element(lottoProduct).removeClass("hide").addClass("show");
-			angular.element(nikeProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.lottofilterModel && !($scope.nikefilterModel)){
-			angular.element(nikeProduct).removeClass("show").addClass("hide");
-			angular.element(lottoProduct).removeClass("hide").addClass("show");
-		}
-		else if($scope.nikefilterModel){
-			angular.element(filaProduct).removeClass("show").addClass("hide");
-			angular.element(adidasProduct).removeClass("show").addClass("hide");
-			angular.element(lottoProduct).removeClass("show").addClass("hide");
-			angular.element(nikeProduct).removeClass("hide").addClass("show");
-		}
-		else{
-			angular.element(adidasProduct).removeClass("hide");
-			angular.element(filaProduct).removeClass("hide");
-			angular.element(lottoProduct).removeClass("hide");
-		}
+	$scope.checking = function(){
+	$scope.$watch('adidasFilter', function() {
+		$scope.AdiClass = false;
+		$scope.FilaClass = false;
+		$scope.LottoClass = false;
+		$scope.NikeClass = false;
+		if($scope.adidasFilter == true){
+			$scope.AdiClass = true;
+		}
+		if($scope.filafilterModel == true){
+			$scope.FilaClass = true;
+		}
+		if($scope.lottofilterModel == true){
+			$scope.LottoClass = true;
+		}
+		if($scope.nikefilterModel == true){
+			$scope.NikeClass = true;
+		}
+		if(!($scope.adidasFilter == true) && !($scope.filafilterModel == true) && !($scope.lottofilterModel == true) && !($scope.nikefilterModel == true)){
+			$scope.AdiClass = true;
+			$scope.FilaClass = true;
+			$scope.LottoClass = true;
+			$scope.NikeClass = true;
+		}
+	});
+	$scope.$watch('filafilterModel', function() {
+		$scope.AdiClass = false;
+		$scope.FilaClass = false;
+		$scope.LottoClass = false;
+		$scope.NikeClass = false;
+		if($scope.adidasFilter == true){
+			$scope.AdiClass = true;
+		}
+		if($scope.filafilterModel == true){
+			$scope.FilaClass = true;
+		}
+		if($scope.lottofilterModel == true){
+			$scope.LottoClass = true;
+		}
+		if($scope.nikefilterModel == true){
+			$scope.NikeClass = true;
+		}
+		if(!($scope.adidasFilter == true) && !($scope.filafilterModel == true) && !($scope.lottofilterModel == true) && !($scope.nikefilterModel == true)){
+			$scope.AdiClass = true;
+			$scope.FilaClass = true;
+			$scope.LottoClass = true;
+			$scope.NikeClass = true;
+		}
+	});
+	$scope.$watch('lottofilterModel', function() {
+		$scope.AdiClass = false;
+		$scope.FilaClass = false;
+		$scope.LottoClass = false;
+		$scope.NikeClass = false;
+		if($scope.adidasFilter == true){
+			$scope.AdiClass = true;
+		}
+		if($scope.filafilterModel == true){
+			$scope.FilaClass = true;
+		}
+		if($scope.lottofilterModel == true){
+			$scope.LottoClass = true;
+		}
+		if($scope.nikefilterModel == true){
+			$scope.NikeClass = true;
+		}
+		if(!($scope.adidasFilter == true) && !($scope.filafilterModel == true) && !($scope.lottofilterModel == true) && !($scope.nikefilterModel == true)){
+			$scope.AdiClass = true;
+			$scope.FilaClass = true;
+			$scope.LottoClass = true;
+			$scope.NikeClass = true;
+		}
+	});
+	$scope.$watch('nikefilterModel', function() {
+		$scope.AdiClass = false;
+		$scope.FilaClass = false;
+		$scope.LottoClass = false;
+		$scope.NikeClass = false;
+		if($scope.adidasFilter == true){
+			$scope.AdiClass = true;
+		}
+		if($scope.filafilterModel == true){
+			$scope.FilaClass = true;
+		}
+		if($scope.lottofilterModel == true){
+			$scope.LottoClass = true;
+		}
+		if($scope.nikefilterModel == true){
+			$scope.NikeClass = true;
+		}
+		if(!($scope.adidasFilter == true) && !($scope.filafilterModel == true) && !($scope.lottofilterModel == true) && !($scope.nikefilterModel == true)){
+			$scope.AdiClass = true;
+			$scope.FilaClass = true;
+			$scope.LottoClass = true;
+			$scope.NikeClass = true;
+		}
+	});
 	}
 	$scope.lowPriceFilter = function(){
 		if($scope.lowerPrice && $scope.avg1Price && $scope.avg2Price && $scope.highPrice){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice < 7000){					
@@ -1171,7 +695,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if(!($scope.lowerPrice) && $scope.avg1Price && $scope.avg2Price && $scope.highPrice){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice > 2000){					
@@ -1183,7 +707,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.lowerPrice && $scope.avg1Price && $scope.avg2Price){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice < 5000){					
@@ -1195,7 +719,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.lowerPrice && $scope.avg1Price && $scope.highPrice){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice < 3000 || adivalue.currPrice > 4999){					
@@ -1207,7 +731,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.lowerPrice && $scope.avg2Price && $scope.highPrice){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice < 2000 || adivalue.currPrice > 2999){					
@@ -1219,7 +743,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if(!($scope.lowerPrice) && $scope.avg1Price && $scope.avg2Price){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice > 1999 || adivalue.currPrice < 5000){					
@@ -1231,7 +755,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if(!($scope.lowerPrice) && $scope.avg1Price && $scope.highPrice){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;				
 				if((adivalue.currPrice > 1999 && adivalue.currPrice < 3000) || adivalue.currPrice > 4999){										
@@ -1243,7 +767,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if(!($scope.lowerPrice) && $scope.avg2Price && $scope.highPrice){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice > 2999){					
@@ -1255,7 +779,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.lowerPrice && $scope.avg1Price){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice < 3000){					
@@ -1267,7 +791,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.lowerPrice && $scope.avg2Price){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice < 2000 || (adivalue.currPrice > 2999 && adivalue.currPrice < 5000)){					
@@ -1279,7 +803,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.lowerPrice && $scope.highPrice){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice < 2000 || adivalue.currPrice > 4999 ){					
@@ -1291,7 +815,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if(!($scope.lowerPrice) && $scope.avg1Price){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice > 1999 && adivalue.currPrice < 3000){					
@@ -1303,7 +827,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if(!($scope.lowerPrice) && $scope.avg2Price){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice > 2999 && adivalue.currPrice < 5000){					
@@ -1315,7 +839,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if(!($scope.lowerPrice) && $scope.highPrice){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice > 4999 ){					
@@ -1327,7 +851,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.lowerPrice){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice < 2000){					
@@ -1339,7 +863,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else{
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				document.getElementById(adival).className = "product show";
@@ -1348,7 +872,7 @@ app.controller("brandController", function($scope){
 	}	
 	$scope.avg1Pricefilter = function(){
 		if($scope.lowerPrice && $scope.avg1Price && $scope.avg2Price && $scope.highPrice){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice < 7000){					
@@ -1360,7 +884,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.lowerPrice && !($scope.avg1Price) && $scope.avg2Price && $scope.highPrice){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice < 2000 && adivalue.currPrice > 2999){					
@@ -1372,7 +896,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.lowerPrice && $scope.avg1Price && $scope.avg2Price){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice < 5000){					
@@ -1384,7 +908,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.lowerPrice && $scope.avg1Price && $scope.highPrice){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice < 3000 || adivalue.currPrice > 4999){					
@@ -1396,7 +920,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.avg1Price && $scope.avg2Price && $scope.highPrice){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice > 1999){					
@@ -1408,7 +932,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.lowerPrice && !($scope.avg1Price) && $scope.avg2Price){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice < 2000 || (adivalue.currPrice > 2999 && adivalue.currPrice < 5000)){					
@@ -1420,7 +944,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.lowerPrice && !($scope.avg1Price) && $scope.highPrice){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;				
 				if( adivalue.currPrice < 2000 || adivalue.currPrice > 4999){										
@@ -1432,7 +956,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if(!($scope.avg1Price) && $scope.avg2Price && $scope.highPrice){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice < 2000 || adivalue.currPrice > 2999){					
@@ -1444,7 +968,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.lowerPrice && $scope.avg1Price){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice < 3000){					
@@ -1456,7 +980,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.avg1Price && $scope.avg2Price){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice > 1999 && adivalue.currPrice < 5000){					
@@ -1468,7 +992,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.avg1Price && $scope.highPrice){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if((adivalue.currPrice > 1999 && adivalue.currPrice < 3000) || adivalue.currPrice > 4999 ){					
@@ -1480,7 +1004,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.lowerPrice && !($scope.avg1Price)){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice < 2000){					
@@ -1492,7 +1016,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if(!($scope.avg1Price) && $scope.avg2Price){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice > 2999 && adivalue.currPrice < 5000){					
@@ -1504,7 +1028,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if(!($scope.avg1Price) && $scope.highPrice){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice > 4999 ){					
@@ -1516,7 +1040,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.avg1Price){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice > 1999 && adivalue.currPrice < 3000){					
@@ -1528,7 +1052,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else{
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				document.getElementById(adival).className = "product show";
@@ -1537,7 +1061,7 @@ app.controller("brandController", function($scope){
 	}
 	$scope.avg2Pricefilter = function(){
 		if($scope.lowerPrice && $scope.avg1Price && $scope.avg2Price && $scope.highPrice){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice < 7000){					
@@ -1549,7 +1073,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.lowerPrice && $scope.avg1Price && !($scope.avg2Price) && $scope.highPrice){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice < 3000 && adivalue.currPrice > 4999){					
@@ -1561,7 +1085,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.lowerPrice && $scope.avg1Price && $scope.avg2Price){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice < 5000){					
@@ -1573,7 +1097,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.lowerPrice && $scope.avg2Price && $scope.highPrice){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice < 2000 || adivalue.currPrice > 2999){					
@@ -1585,7 +1109,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.avg1Price && $scope.avg2Price && $scope.highPrice){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice > 1999){					
@@ -1597,7 +1121,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.lowerPrice && $scope.avg1Price && !($scope.avg2Price)){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice < 3000){					
@@ -1609,7 +1133,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.lowerPrice && !($scope.avg2Price) && $scope.highPrice){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;				
 				if( adivalue.currPrice < 2000 || adivalue.currPrice > 4999){										
@@ -1621,7 +1145,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.avg1Price && !($scope.avg2Price) && $scope.highPrice){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if((adivalue.currPrice > 1999 && adivalue.currPrice < 3000) || adivalue.currPrice > 4999){					
@@ -1633,7 +1157,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.lowerPrice && $scope.avg2Price){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice < 2000 || (adivalue.currPrice > 2999 && adivalue.currPrice < 5000)){					
@@ -1645,7 +1169,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.avg1Price && $scope.avg2Price){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice > 1999 && adivalue.currPrice < 5000){					
@@ -1657,7 +1181,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.avg2Price && $scope.highPrice){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if( adivalue.currPrice > 2999 ){					
@@ -1669,7 +1193,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.lowerPrice && !($scope.avg2Price)){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice < 2000){					
@@ -1681,7 +1205,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.avg1Price && !($scope.avg2Price)){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice > 1999 && adivalue.currPrice < 3000){					
@@ -1693,7 +1217,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if(!($scope.avg2Price) && $scope.highPrice){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice > 4999 ){					
@@ -1705,7 +1229,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.avg2Price){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice > 2999 && adivalue.currPrice < 5000){					
@@ -1717,7 +1241,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else{
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				document.getElementById(adival).className = "product show";
@@ -1726,7 +1250,7 @@ app.controller("brandController", function($scope){
 	}
 	$scope.highPricefilter = function(){
 		if($scope.lowerPrice && $scope.avg1Price && $scope.avg2Price && $scope.highPrice){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice < 7000){					
@@ -1738,7 +1262,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.lowerPrice && $scope.avg1Price && $scope.avg2Price && !($scope.highPrice)){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice < 5000){					
@@ -1750,7 +1274,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.lowerPrice && $scope.avg1Price && $scope.highPrice){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if( adivalue.currPrice < 3000 || adivalue.currPrice > 4999){					
@@ -1762,7 +1286,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.lowerPrice && $scope.avg2Price && $scope.highPrice){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice < 2000 || adivalue.currPrice > 2999){					
@@ -1774,7 +1298,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.avg1Price && $scope.avg2Price && $scope.highPrice){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice > 1999){					
@@ -1786,7 +1310,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.lowerPrice && $scope.avg1Price && !($scope.highPrice)){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice < 3000){					
@@ -1798,7 +1322,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.lowerPrice && $scope.avg2Price && !($scope.highPrice)){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;				
 				if( adivalue.currPrice < 2000 || (adivalue.currPrice > 2999 && adivalue.currPrice < 5000)){										
@@ -1810,7 +1334,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.avg1Price && $scope.avg2Price && !($scope.highPrice)){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice > 1999 && adivalue.currPrice < 5000){					
@@ -1822,7 +1346,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.lowerPrice && $scope.highPrice){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice < 2000 || adivalue.currPrice > 4999 ){					
@@ -1834,7 +1358,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.avg1Price && $scope.highPrice){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if((adivalue.currPrice > 1999 && adivalue.currPrice < 3000) || adivalue.currPrice > 4999){					
@@ -1846,7 +1370,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.avg2Price && $scope.highPrice){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if( adivalue.currPrice > 2999 ){					
@@ -1858,7 +1382,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.lowerPrice && !($scope.highPrice)){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice < 2000){					
@@ -1870,7 +1394,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.avg1Price && !($scope.highPrice)){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice > 1999 && adivalue.currPrice < 3000){					
@@ -1882,7 +1406,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.avg2Price && !($scope.highPrice)){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice > 2999 && adivalue.currPrice < 5000 ){					
@@ -1894,7 +1418,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else if($scope.highPrice){
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				if(adivalue.currPrice > 4999 ){					
@@ -1906,7 +1430,7 @@ app.controller("brandController", function($scope){
 			});
 		}
 		else{
-			var adivalues = $scope.allProduct;	
+			var adivalues = $scope.productRecords;	
 			angular.forEach(adivalues, function(adivalue) {
 				var adival = adivalue.id;
 				document.getElementById(adival).className = "product show";
@@ -1966,4 +1490,3 @@ app.controller("brandController", function($scope){
 		}
 	});
 });
-

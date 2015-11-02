@@ -7,9 +7,11 @@
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="js/angular.min.js"></script>
-		<script type="text/javascript" src="js/angular.route.js"></script>
-		<script type="text/javascript" src="js/home.js"></script>
+		<script type="text/javascript" src="lib/angular.min.js"></script>
+		<script type="text/javascript" src="lib/angular.route.js"></script>
+		<script type="text/javascript" src="js/homeModule/app.js"></script>
+		<script type="text/javascript" src="js/homeModule/controllers/controller.js"></script>
+		<script type="text/javascript" src="js/homeModule/Directives/directive.js"></script>
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap-social.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
@@ -54,10 +56,10 @@
 						<div class="pull-right hide" id="jqUpArrow" ng-click="showceta()"><span class="glyphicon glyphicon-menu-up"></span></div>
 					</div>
 					<div class="catagory clearfix" id="jqCatagories">
-						<div class="clearfix pb-s"><input type="checkbox" ng-click ="checkFilter()" ng-model="adidasFilter"/><span class="pl-m">Adidas</span></div>
-						<div class="clearfix pb-s"><input type="checkbox" ng-click = "filaFilter()" ng-model="filafilterModel" /><span class="pl-m">fila</span></div>
-						<div class="clearfix pb-s"><input type="checkbox" ng-click = "lottoFilter()" ng-model="lottofilterModel"/><span class="pl-m">lotto</span></div>
-						<div class="clearfix pb-s"><input type="checkbox" ng-click = "nikeFilter();" ng-model="nikefilterModel"/><span class="pl-m">nike</span></div>
+						<div class="clearfix pb-s"><input type="checkbox" ng-click="checking()" ng-model="adidasFilter"/><span class="pl-m">Adidas</span></div>
+						<div class="clearfix pb-s"><input type="checkbox" ng-click="checking()" ng-model="filafilterModel" /><span class="pl-m">fila</span></div>
+						<div class="clearfix pb-s"><input type="checkbox" ng-click="checking()" ng-model="lottofilterModel"/><span class="pl-m">lotto</span></div>
+						<div class="clearfix pb-s"><input type="checkbox" ng-click="checking()" ng-model="nikefilterModel"/><span class="pl-m">nike</span></div>
 						<!--<div class="clearfix pb-s"><input type="checkbox"/><span class="pl-m">puma</span></div>
 						<div class="clearfix pb-s"><input type="checkbox"/><span class="pl-m">Reebok</span></div> -->
 					</div>
@@ -78,18 +80,16 @@
 					<div class="pt-s pull-right"><input class="searchBox" type="text" id="jqSearch" placeholder = "Search here" ng-model = "searchBox" /></div>
 					<div id="jqNoMatch" class="hide pt-m align-c">No match found</div>
 					<div class="pt-40" id="jqProductes">
-					<div id="adidasProduct"><adidas-Shoes></adidas-Shoes></div>
+					<all-Shoes></all-Shoes>
+					<!-- <div id="adidasProduct"><adidas-Shoes></adidas-Shoes></div>
 					<div id="filaProduct"><fila-Shoes></fila-Shoes></div>
 					<div id="lottoProduct"><lotto-Shoes></lotto-Shoes></div>
-					<div id="nikeProduct"><nike-Shoes></nike-Shoes></div>
+					<div id="nikeProduct"><nike-Shoes></nike-Shoes></div> -->
 					</div>
 			</article>
 		</div>
 		<div class="productDetails">
-			<adidas-Details></adidas-Details>
-			<fila-Details></fila-Details>
-			<lotto-Details></lotto-Details>
-			<nike-Details></nike-Details>
+			<shoes-Details></shoes-Details>
 		</div>
 		</section>
 		<footer class="footer">

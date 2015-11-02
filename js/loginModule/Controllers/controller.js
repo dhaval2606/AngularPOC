@@ -1,4 +1,4 @@
-var loginapp = angular.module("loginApp",[]);
+/* App Controller */
 loginapp.controller("loginCrtl",function($scope, $q){
 	$scope.Err = "";
 	$scope.UserId = "";

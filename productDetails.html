@@ -1,0 +1,38 @@
+<div id='{{adiProRecord.productId}}' class='hide' ng-repeat ='adiProRecord in productRecords'>
+				<div class='siteNav'>Home > Footwear > Men's Footwear > sport shoes > <span class='active'>{{adiProRecord.shoesType}} shoes <span></div>
+					<article class='leftColPro'>
+						<div><img src='{{adiProRecord.src}}' width='300' height = '450' /></div>
+					</article>
+					<article class='rightColPro'>
+						<h1 class='catagoryTitlePro bb-s pb-m'>{{adiProRecord.shoesType}} shoes</h1>
+						<div class='clearfix pt-s pb-s bb-s'>
+								<span class='glyphicon glyphicon-star'></span>
+								<span class='glyphicon glyphicon-star'></span>
+								<span class='glyphicon glyphicon-star'></span>
+								<span class='glyphicon glyphicon-star-empty'></span>
+								<span class='glyphicon glyphicon-star-empty'></span>
+								<span class='pl-s'>{{adiProRecord.ratings}} Reviews</span>
+						</div>
+						<div class='clearfix pt-s pb-m bb-s'>
+							<div class='pull-left'>
+								<div class='txt-light txt-15'>Select Color</div>
+								<div><input type='radio' name='{{adiProRecord.colorName}}' checked/><span class='pl-s pr-s'>White</span><input type='radio' name='{{adiProRecord.colorName}}' /><span class='pl-s pr-s'>Black</span></div>
+							</div>
+							<div class='pull-right'>
+								<div class='txt-light txt-15'>Select Size</div>
+								<div><input type='radio' name='{{adiProRecord.SizeName}}' checked/><span class='pl-s pr-s'>6</span><input type='radio' name='{{adiProRecord.SizeName}}' /><span class='pl-s pr-s'>7</span> <input type='radio' name='{{adiProRecord.SizeName}}' /><span class='pl-s pr-s'>8</span><input type='radio' name='{{adiProRecord.SizeName}}' /><span class='pl-s pr-s'>9</span></div>
+							</div>
+						</div>
+						<div class='pt-s txt-15 txt-light'>last Price: <span class='linrThrought'>Rs {{adiProRecord.prevPrice}}</span></div>
+						<div class='pt-s'>
+							<span class='txt-22'>Rs {{adiProRecord.currPrice}}</span> <span class='pl-s success'>20% Off</span>
+						</div>
+						<div class='txt-12'>Selling Price</div>
+						<div class='pt-m txt-13'>(Free delivery)</div>
+						<div class='pt-m w-300px'>
+							<button type='button' class='btn btn-warning btn-block btn-lg'>ADD TO CART</button>
+							<button type='button' class='btn btn-success btn-block btn-lg'>BUY NOW</button>
+							<a type='button' class='btn btn-primary btn-sm mt-m' href='home.html'>BACK TO PRODUCTS</a>
+						</div>
+					</article>
+			</div>
