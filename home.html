@@ -69,15 +69,16 @@
 						<div class="pull-right hide" id="jqUpArrowPri" ng-click="showcetaPri()"><span class="glyphicon glyphicon-menu-up"></span></div>
 					</div>
 					<div class="catagory clearfix" id="jqCatagoriesPri">
-						<div class="clearfix pb-s"><input type="checkbox" ng-click ="lowPriceFilter()" ng-model="lowerPrice" /><span class="pl-m">Rs 1999 and below</span></div>
-						<div class="clearfix pb-s"><input type="checkbox" ng-click = "avg1Pricefilter()" ng-model="avg1Price" /><span class="pl-m">Rs 2000 - Rs 2999</span></div>
-						<div class="clearfix pb-s"><input type="checkbox" ng-click = "avg2Pricefilter()" ng-model="avg2Price"/><span class="pl-m">Rs 3000 - Rs 4999</span></div>
-						<div class="clearfix pb-s"><input type="checkbox" ng-click = "highPricefilter()" ng-model="highPrice"/><span class="pl-m">Rs 5000 and above</span></div>
+						<div class="clearfix pb-s"><input type="checkbox" ng-click = "PriceFilter()" ng-model="lowerPrice" /><span class="pl-m">Rs 1999 and below</span></div>
+						<div class="clearfix pb-s"><input type="checkbox" ng-click = "PriceFilter()" ng-model="avg1Price" /><span class="pl-m">Rs 2000 - Rs 2999</span></div>
+						<div class="clearfix pb-s"><input type="checkbox" ng-click = "PriceFilter()" ng-model="avg2Price"/><span class="pl-m">Rs 3000 - Rs 4999</span></div>
+						<div class="clearfix pb-s"><input type="checkbox" ng-click = "PriceFilter()" ng-model="highPrice"/><span class="pl-m">Rs 5000 and above</span></div>
 						
 					</div>
 			</article>
 			<article class="rightCol">
 					<div class="pt-s pull-right"><input class="searchBox" type="text" id="jqSearch" placeholder = "Search here" ng-model = "searchBox" /></div>
+					<!--<search></search>-->
 					<div id="jqNoMatch" class="hide pt-m align-c">No match found</div>
 					<div class="pt-40" id="jqProductes">
 					<all-Shoes></all-Shoes>
