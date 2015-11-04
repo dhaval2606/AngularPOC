@@ -1,7 +1,13 @@
 /* Home Controller */ 
 
-app.controller("brandController", function($scope){
+app.controller("brandController", function($scope) {
 	$scope.searchBox = "";
+	$scope.downarr = true;
+	$scope.prodshow = true;
+	$scope.pricedownarr = true;
+	$scope.priceshow = true;
+	$scope.uparr = false;
+	$scope.priceuparr = false;
 	$scope.AdiClass = true;
 	$scope.FilaClass = true;
 	$scope.LottoClass = true;
@@ -11,19 +17,19 @@ app.controller("brandController", function($scope){
 		$scope.FilaClass = false;
 		$scope.LottoClass = false;
 		$scope.NikeClass = false;
-		if($scope.adidasFilter == true){
+		if($scope.adidasFilter == true) {
 			$scope.AdiClass = true;
 		}
-		if($scope.filafilterModel == true){
+		if($scope.filafilterModel == true) {
 			$scope.FilaClass = true;
 		}
-		if($scope.lottofilterModel == true){
+		if($scope.lottofilterModel == true) {
 			$scope.LottoClass = true;
 		}
-		if($scope.nikefilterModel == true){
+		if($scope.nikefilterModel == true) {
 			$scope.NikeClass = true;
 		}
-		if(!($scope.adidasFilter == true) && !($scope.filafilterModel == true) && !($scope.lottofilterModel == true) && !($scope.nikefilterModel == true)){
+		if(!($scope.adidasFilter == true) && !($scope.filafilterModel == true) && !($scope.lottofilterModel == true) && !($scope.nikefilterModel == true)) {
 			$scope.AdiClass = true;
 			$scope.FilaClass = true;
 			$scope.LottoClass = true;
@@ -36,7 +42,7 @@ app.controller("brandController", function($scope){
 				var Prodval = searchvalue.id;
 				document.getElementById(Prodval).className = "product hide";				
 			});
-		if($scope.lowerPrice){
+		if($scope.lowerPrice) {
 			var prodvalues = $scope.productRecords;	
 			angular.forEach(prodvalues, function(searchvalue) {
 				var Prodval = searchvalue.id;
@@ -46,7 +52,7 @@ app.controller("brandController", function($scope){
 				
 			});
 		}
-		if($scope.avg1Price){
+		if($scope.avg1Price) {
 			var prodvalues = $scope.productRecords;	
 			angular.forEach(prodvalues, function(searchvalue) {
 				var Prodval = searchvalue.id;
@@ -56,7 +62,7 @@ app.controller("brandController", function($scope){
 				
 			});
 		}
-		if($scope.avg2Price){
+		if($scope.avg2Price) {
 			var prodvalues = $scope.productRecords;	
 			angular.forEach(prodvalues, function(searchvalue) {
 				var Prodval = searchvalue.id;
@@ -66,7 +72,7 @@ app.controller("brandController", function($scope){
 				
 			});
 		}
-		if($scope.highPrice){
+		if($scope.highPrice) {
 			var prodvalues = $scope.productRecords;	
 			angular.forEach(prodvalues, function(searchvalue) {
 				var Prodval = searchvalue.id;
@@ -76,7 +82,7 @@ app.controller("brandController", function($scope){
 				
 			});
 		}
-		if(!($scope.lowerPrice) && !($scope.avg1Price) && !($scope.avg2Price) && !($scope.highPrice)){
+		if(!($scope.lowerPrice) && !($scope.avg1Price) && !($scope.avg2Price) && !($scope.highPrice)) {
 			var prodvalues = $scope.productRecords;	
 			angular.forEach(prodvalues, function(searchvalue) {
 				var Prodval = searchvalue.id;
@@ -501,167 +507,12 @@ app.controller("brandController", function($scope){
 		"prevPrice" : "11,999",
 		"discount" : "60%"
 	}
-	];
-
-	$scope.adiDetails = function(adiid){
-		if(adiid == "Adi1"){
-		document.getElementById("jqProducts").className = "hide";
-		document.getElementById("AdiPro1").className = "show";
-		}
-		else if(adiid == "Adi2"){
-		document.getElementById("jqProducts").className = "hide";
-		document.getElementById("AdiPro2").className = "show";
-		}
-		else if(adiid == "Adi3"){
-		document.getElementById("jqProducts").className = "hide";
-		document.getElementById("AdiPro3").className = "show";
-		}
-		else if(adiid == "Adi4"){
-		document.getElementById("jqProducts").className = "hide";
-		document.getElementById("AdiPro4").className = "show";
-		}
-		else if(adiid == "Adi5"){
-		document.getElementById("jqProducts").className = "hide";
-		document.getElementById("AdiPro5").className = "show";
-		}
-		else if(adiid == "Adi6"){
-		document.getElementById("jqProducts").className = "hide";
-		document.getElementById("AdiPro6").className = "show";
-		}
-		else if(adiid == "Adi7"){
-		document.getElementById("jqProducts").className = "hide";
-		document.getElementById("AdiPro7").className = "show";
-		}
-		else {
-		document.getElementById("jqProducts").className = "hide";
-		document.getElementById("AdiPro8").className = "show";
-		}
-	}
-	$scope.filaDetails = function(adiid){
-		if(adiid == "fila1"){
-		document.getElementById("jqProducts").className = "hide";
-		document.getElementById("filaPro1").className = "show";
-		}
-		else if(adiid == "fila2"){
-		document.getElementById("jqProducts").className = "hide";
-		document.getElementById("filaPro2").className = "show";
-		}
-		else if(adiid == "fila3"){
-		document.getElementById("jqProducts").className = "hide";
-		document.getElementById("filaPro3").className = "show";
-		}
-		else if(adiid == "fila4"){
-		document.getElementById("jqProducts").className = "hide";
-		document.getElementById("filaPro4").className = "show";
-		}
-		else if(adiid == "fila5"){
-		document.getElementById("jqProducts").className = "hide";
-		document.getElementById("filaPro5").className = "show";
-		}
-		else if(adiid == "fila6"){
-		document.getElementById("jqProducts").className = "hide";
-		document.getElementById("filaPro6").className = "show";
-		}
-		else if(adiid == "fila7"){
-		document.getElementById("jqProducts").className = "hide";
-		document.getElementById("filaPro7").className = "show";
-		}
-		else {
-		document.getElementById("jqProducts").className = "hide";
-		document.getElementById("filaPro8").className = "show";
-		}
-	}
-	$scope.lottoDetails = function(adiid){
-		if(adiid == "lotto1"){
-		document.getElementById("jqProducts").className = "hide";
-		document.getElementById("lottoPro1").className = "show";
-		}
-		else if(adiid == "lotto2"){
-		document.getElementById("jqProducts").className = "hide";
-		document.getElementById("lottoPro2").className = "show";
-		}
-		else if(adiid == "lotto3"){
-		document.getElementById("jqProducts").className = "hide";
-		document.getElementById("lottoPro3").className = "show";
-		}
-		else if(adiid == "lotto4"){
-		document.getElementById("jqProducts").className = "hide";
-		document.getElementById("lottoPro4").className = "show";
-		}
-		else if(adiid == "lotto5"){
-		document.getElementById("jqProducts").className = "hide";
-		document.getElementById("lottoPro5").className = "show";
-		}
-		else if(adiid == "lotto6"){
-		document.getElementById("jqProducts").className = "hide";
-		document.getElementById("lottoPro6").className = "show";
-		}
-		else if(adiid == "lotto7"){
-		document.getElementById("jqProducts").className = "hide";
-		document.getElementById("lottoPro7").className = "show";
-		}
-		else {
-		document.getElementById("jqProducts").className = "hide";
-		document.getElementById("lottoPro8").className = "show";
-		}
-	}
-	$scope.nikeDetails = function(adiid){
-		if(adiid == "nike1"){
-		document.getElementById("jqProducts").className = "hide";
-		document.getElementById("nikePro1").className = "show";
-		}
-		else if(adiid == "nike2"){
-		document.getElementById("jqProducts").className = "hide";
-		document.getElementById("nikePro2").className = "show";
-		}
-		else if(adiid == "nike3"){
-		document.getElementById("jqProducts").className = "hide";
-		document.getElementById("nikePro3").className = "show";
-		}
-		else if(adiid == "nike4"){
-		document.getElementById("jqProducts").className = "hide";
-		document.getElementById("nikePro4").className = "show";
-		}
-		else if(adiid == "nike5"){
-		document.getElementById("jqProducts").className = "hide";
-		document.getElementById("nikePro5").className = "show";
-		}
-		else if(adiid == "nike6"){
-		document.getElementById("jqProducts").className = "hide";
-		document.getElementById("nikePro6").className = "show";
-		}
-		else if(adiid == "nike7"){
-		document.getElementById("jqProducts").className = "hide";
-		document.getElementById("nikePro7").className = "show";
-		}
-		else {
-		document.getElementById("jqProducts").className = "hide";
-		document.getElementById("nikePro8").className = "show";
-		}
-	}
-	$scope.hideceta = function(){
-		angular.element(jqCatagories).removeClass("show").addClass("hide");
-		angular.element(jqDownArrow).removeClass("show").addClass("hide");
-		angular.element(jqUpArrow).addClass("show");		
-	}
-	$scope.showceta = function(){		
-		angular.element(jqUpArrow).removeClass("show").addClass("hide");
-		angular.element(jqCatagories).removeClass("hide").addClass("show");
-		angular.element(jqDownArrow).addClass("show");
-				
-	}
-	$scope.hidecetaPri = function(){
-		angular.element(jqCatagoriesPri).removeClass("show").addClass("hide");
-		angular.element(jqDownArrowPri).removeClass("show").addClass("hide");
-		angular.element(jqUpArrowPri).addClass("show");		
-	}
-	$scope.showcetaPri = function(){		
-		angular.element(jqUpArrowPri).removeClass("show").addClass("hide");
-		angular.element(jqCatagoriesPri).removeClass("hide").addClass("show");
-		angular.element(jqDownArrowPri).addClass("show");
-				
-	}
-	$scope.checking = function(){
+	];	
+	$scope.hideceta = function() { $scope.downarr = false; $scope.uparr = true; $scope.prodshow = false;}
+	$scope.showceta = function() { $scope.downarr = true; $scope.uparr = false; $scope.prodshow = true;}
+	$scope.hidecetaPri = function() { $scope.pricedownarr = false; $scope.priceuparr = true; $scope.priceshow = false;}
+	$scope.showcetaPri = function() { $scope.pricedownarr = true; $scope.priceuparr = false; $scope.priceshow = true;}
+	$scope.checking = function() {
 	$scope.$watch('adidasFilter', function() {
 		$scope.prodMethod();
 	});
@@ -675,7 +526,7 @@ app.controller("brandController", function($scope){
 		$scope.prodMethod();
 	});
 	}
-	$scope.PriceFilter = function(){		
+	$scope.PriceFilter = function() {		
 		$scope.$watch('lowerPrice', function() {
 			$scope.priceFilterMethod();
 		});
@@ -689,54 +540,38 @@ app.controller("brandController", function($scope){
 			$scope.priceFilterMethod();
 		})
 	}
-	
-	angular.element(jqSearch).bind("blur",function(){
-		if($scope.searchBox == "adidas"){
-			$scope.adidasFilter = false; $scope.filafilterModel = false; $scope.lottofilterModel = false; $scope.nikefilterModel = false;
-			angular.element(jqNoMatch).removeClass("show").addClass("hide");
-			
-			$scope.AdiClass = true;
-			$scope.FilaClass = false;
-			$scope.LottoClass = false;
-			$scope.NikeClass = false;
-		}
-		else if($scope.searchBox == "fila"){
-			$scope.adidasFilter = false; $scope.filafilterModel = false; $scope.lottofilterModel = false; $scope.nikefilterModel = false;
-			angular.element(jqNoMatch).removeClass("show").addClass("hide");
-			$scope.AdiClass = false;
-			$scope.FilaClass = true;
-			$scope.LottoClass = false;
-			$scope.NikeClass = false;
-		} 
-		else if($scope.searchBox == "lotto"){
-			$scope.adidasFilter = false; $scope.filafilterModel = false; $scope.lottofilterModel = false; $scope.nikefilterModel = false;
-			angular.element(jqNoMatch).removeClass("show").addClass("hide");
-			$scope.AdiClass = false;
-			$scope.FilaClass = false;
-			$scope.LottoClass = true;
-			$scope.NikeClass = false;
-		}
-		else if($scope.searchBox == "nike"){
-			$scope.adidasFilter = false; $scope.filafilterModel = false; $scope.lottofilterModel = false; $scope.nikefilterModel = false;
-			angular.element(jqNoMatch).removeClass("show").addClass("hide");
-			$scope.AdiClass = false;
-			$scope.FilaClass = false;
-			$scope.LottoClass = false;
-			$scope.NikeClass = true;
-		}
-		else if($scope.searchBox == ""){
-			$scope.adidasFilter = false; $scope.filafilterModel = false; $scope.lottofilterModel = false; $scope.nikefilterModel = false;
-			angular.element(jqNoMatch).removeClass("show").addClass("hide");
-			$scope.AdiClass = true;
-			$scope.FilaClass = true;
-			$scope.LottoClass = true;
-			$scope.NikeClass = true;
-		}
-		else{
-			$scope.AdiClass = false;
-			$scope.FilaClass = false;
-			$scope.LottoClass = false;
-			$scope.NikeClass = false;
-		}
-	});
+	$scope.adiDetails = function(adiid) {
+		if(adiid == "Adi1") { angular.element(jqProducts).addClass("hide"); angular.element(AdiPro1).addClass("show")}
+		else if(adiid == "Adi2") { angular.element(jqProducts).addClass("hide"); angular.element(AdiPro2).addClass("show")}
+		else if(adiid == "Adi3") { angular.element(jqProducts).addClass("hide"); angular.element(AdiPro3).addClass("show")}
+		else if(adiid == "Adi4") { angular.element(jqProducts).addClass("hide"); angular.element(AdiPro4).addClass("show")}
+		else if(adiid == "Adi5") { angular.element(jqProducts).addClass("hide"); angular.element(AdiPro5).addClass("show")}
+		else if(adiid == "Adi6") { angular.element(jqProducts).addClass("hide"); angular.element(AdiPro6).addClass("show")}
+		else if(adiid == "Adi7") { angular.element(jqProducts).addClass("hide"); angular.element(AdiPro7).addClass("show")}
+		else if(adiid == "Adi8") { angular.element(jqProducts).addClass("hide"); angular.element(AdiPro8).addClass("show")}
+		else if(adiid == "fila1") { angular.element(jqProducts).addClass("hide"); angular.element(filaPro1).addClass("show")}
+		else if(adiid == "fila2") { angular.element(jqProducts).addClass("hide"); angular.element(filaPro2).addClass("show")}
+		else if(adiid == "fila3") { angular.element(jqProducts).addClass("hide"); angular.element(filaPro3).addClass("show")}
+		else if(adiid == "fila4") { angular.element(jqProducts).addClass("hide"); angular.element(filaPro4).addClass("show")}
+		else if(adiid == "fila5") { angular.element(jqProducts).addClass("hide"); angular.element(filaPro5).addClass("show")}
+		else if(adiid == "fila6") { angular.element(jqProducts).addClass("hide"); angular.element(filaPro6).addClass("show")}
+		else if(adiid == "fila7") { angular.element(jqProducts).addClass("hide"); angular.element(filaPro7).addClass("show")}
+		else if(adiid == "fila8") { angular.element(jqProducts).addClass("hide"); angular.element(filaPro8).addClass("show")}
+		else if(adiid == "lotto1") { angular.element(jqProducts).addClass("hide"); angular.element(lottoPro1).addClass("show")}
+		else if(adiid == "lotto2") { angular.element(jqProducts).addClass("hide"); angular.element(lottoPro2).addClass("show")}
+		else if(adiid == "lotto3") { angular.element(jqProducts).addClass("hide"); angular.element(lottoPro3).addClass("show")}
+		else if(adiid == "lotto4") { angular.element(jqProducts).addClass("hide"); angular.element(lottoPro4).addClass("show")}
+		else if(adiid == "lotto5") { angular.element(jqProducts).addClass("hide"); angular.element(lottoPro5).addClass("show")}
+		else if(adiid == "lotto6") { angular.element(jqProducts).addClass("hide"); angular.element(lottoPro6).addClass("show")}
+		else if(adiid == "lotto7") { angular.element(jqProducts).addClass("hide"); angular.element(lottoPro7).addClass("show")}
+		else if(adiid == "lotto8") { angular.element(jqProducts).addClass("hide"); angular.element(lottoPro8).addClass("show")}
+		else if(adiid == "nike1") { angular.element(jqProducts).addClass("hide"); angular.element(nikePro1).addClass("show")}
+		else if(adiid == "nike2") { angular.element(jqProducts).addClass("hide"); angular.element(nikePro2).addClass("show")}
+		else if(adiid == "nike3") { angular.element(jqProducts).addClass("hide"); angular.element(nikePro3).addClass("show")}
+		else if(adiid == "nike4") { angular.element(jqProducts).addClass("hide"); angular.element(nikePro4).addClass("show")}
+		else if(adiid == "nike5") { angular.element(jqProducts).addClass("hide"); angular.element(nikePro5).addClass("show")}
+		else if(adiid == "nike6") { angular.element(jqProducts).addClass("hide"); angular.element(nikePro6).addClass("show")}
+		else if(adiid == "nike7") { angular.element(jqProducts).addClass("hide"); angular.element(nikePro7).addClass("show")}
+		else { angular.element(jqProducts).addClass("hide"); angular.element(nikePro8).addClass("show")}
+	}	
 });

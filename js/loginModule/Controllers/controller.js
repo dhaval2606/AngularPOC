@@ -1,9 +1,9 @@
 /* App Controller */
-loginapp.controller("loginCrtl",function($scope, $q){
+loginapp.controller("loginCrtl", function($scope, $q) {
 	$scope.Err = "";
 	$scope.UserId = "";
 	$scope.Password = "";
-	$scope.validUser = function(UFID, Pass){
+	$scope.validUser = function(UFID, Pass) {
 		var q = $q.defer();
 		if((UFID == "dhaval2606") && (Pass == "Password1"))
 		{
@@ -15,15 +15,15 @@ loginapp.controller("loginCrtl",function($scope, $q){
 		}
 		return q.promise;
 	}
-	$scope.Success = function(){
+	$scope.Success = function() {
 		window.location.href = "home.html"
 	}
 	
-	$scope.checkUser = function(){
+	$scope.checkUser = function() {
 		$scope.promise = $scope.validUser($scope.UserId, $scope.Password);
 		$scope.promise.then(
-		function(v){$scope.Err = v},
-		function(Err){$scope.Err = Err}
+		function(v) { $scope.Err = v},
+		function(Err) { $scope.Err = Err}
 		)
 	}
 })

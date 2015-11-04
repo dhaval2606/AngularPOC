@@ -52,40 +52,35 @@
 			<article class="leftCol">
 					<div class="clearfix">
 						<div class="bold txt-15 pull-left">BRAND</div>
-						<div class="pull-right" id="jqDownArrow" ng-click="hideceta()"><span class="glyphicon glyphicon-menu-down"></span></div>
-						<div class="pull-right hide" id="jqUpArrow" ng-click="showceta()"><span class="glyphicon glyphicon-menu-up"></span></div>
+						<div class="pull-right" id="jqDownArrow" ng-click="hideceta()" ng-show = "downarr"><span class="glyphicon glyphicon-menu-down"></span></div>
+						<div class="pull-right" id="jqUpArrow" ng-click="showceta()" ng-show = "uparr"><span class="glyphicon glyphicon-menu-up"></span></div>
 					</div>
-					<div class="catagory clearfix" id="jqCatagories">
+					<div class="catagory clearfix" id="jqCatagories" ng-show="prodshow">
 						<div class="clearfix pb-s"><input type="checkbox" ng-click="checking()" ng-model="adidasFilter"/><span class="pl-m">Adidas</span></div>
 						<div class="clearfix pb-s"><input type="checkbox" ng-click="checking()" ng-model="filafilterModel" /><span class="pl-m">fila</span></div>
 						<div class="clearfix pb-s"><input type="checkbox" ng-click="checking()" ng-model="lottofilterModel"/><span class="pl-m">lotto</span></div>
 						<div class="clearfix pb-s"><input type="checkbox" ng-click="checking()" ng-model="nikefilterModel"/><span class="pl-m">nike</span></div>
-						<!--<div class="clearfix pb-s"><input type="checkbox"/><span class="pl-m">puma</span></div>
-						<div class="clearfix pb-s"><input type="checkbox"/><span class="pl-m">Reebok</span></div> -->
 					</div>
+					<div class="bb-s pt-s pb-s"></div>
 					<div class="clearfix pt-m">
 						<div class="bold txt-15 pull-left">Price</div>
-						<div class="pull-right" id="jqDownArrowPri" ng-click="hidecetaPri()"><span class="glyphicon glyphicon-menu-down"></span></div>
-						<div class="pull-right hide" id="jqUpArrowPri" ng-click="showcetaPri()"><span class="glyphicon glyphicon-menu-up"></span></div>
+						<div class="pull-right" id="jqDownArrowPri" ng-click="hidecetaPri()" ng-show = "pricedownarr"><span class="glyphicon glyphicon-menu-down"></span></div>
+						<div class="pull-right" id="jqUpArrowPri" ng-click="showcetaPri()" ng-show = "priceuparr"><span class="glyphicon glyphicon-menu-up"></span></div>
 					</div>
-					<div class="catagory clearfix" id="jqCatagoriesPri">
+					<div class="catagory clearfix" id="jqCatagoriesPri" ng-show = "priceshow">
 						<div class="clearfix pb-s"><input type="checkbox" ng-click = "PriceFilter()" ng-model="lowerPrice" /><span class="pl-m">Rs 1999 and below</span></div>
 						<div class="clearfix pb-s"><input type="checkbox" ng-click = "PriceFilter()" ng-model="avg1Price" /><span class="pl-m">Rs 2000 - Rs 2999</span></div>
 						<div class="clearfix pb-s"><input type="checkbox" ng-click = "PriceFilter()" ng-model="avg2Price"/><span class="pl-m">Rs 3000 - Rs 4999</span></div>
 						<div class="clearfix pb-s"><input type="checkbox" ng-click = "PriceFilter()" ng-model="highPrice"/><span class="pl-m">Rs 5000 and above</span></div>
 						
 					</div>
+					<div class="bb-s pt-s pb-s"></div>
 			</article>
 			<article class="rightCol">
 					<div class="pt-s pull-right"><input class="searchBox" type="text" id="jqSearch" placeholder = "Search here" ng-model = "searchBox" /></div>
-					<!--<search></search>-->
 					<div id="jqNoMatch" class="hide pt-m align-c">No match found</div>
 					<div class="pt-40" id="jqProductes">
 					<all-Shoes></all-Shoes>
-					<!-- <div id="adidasProduct"><adidas-Shoes></adidas-Shoes></div>
-					<div id="filaProduct"><fila-Shoes></fila-Shoes></div>
-					<div id="lottoProduct"><lotto-Shoes></lotto-Shoes></div>
-					<div id="nikeProduct"><nike-Shoes></nike-Shoes></div> -->
 					</div>
 			</article>
 		</div>

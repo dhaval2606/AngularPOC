@@ -1,4 +1,4 @@
-<div class='product' ng-show = "{{adiRecord.ProClass}}" id='{{adiRecord.id}}' ng-repeat ='adiRecord in productRecords' ng-click='adiDetails(adiRecord.id)'>
+<div class='product' ng-show = "{{adiRecord.ProClass}}" id='{{adiRecord.id}}' ng-repeat ='adiRecord in productRecords | filter:searchBox' ng-click='adiDetails(adiRecord.id)'>
 							<div class='imgDiv'><img src='{{adiRecord.src}}' width='210' height = '150' /></div>
 							<div class='pt-m'>{{adiRecord.shoesType}} Shoes</div> 
 							<div class='clearfix pt-s'>
